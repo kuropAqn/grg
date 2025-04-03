@@ -80,18 +80,81 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dEJksU2F_B9rvnEaNN8X-1" value="レビュー" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" parent="1" vertex="1">
-          <mxGeometry x="750" y="560" width="400" height="240" as="geometry" />
+          <mxGeometry x="760" y="560" width="400" height="450" as="geometry" />
         </mxCell>
-        <mxCell id="dEJksU2F_B9rvnEaNN8X-2" value="ゲーム詳細" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="812.5" y="600" width="275" height="101" as="geometry" />
+        <mxCell id="dEJksU2F_B9rvnEaNN8X-2" value="レビュー投稿画面" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="822.5" y="745" width="275" height="101" as="geometry" />
         </mxCell>
-        <mxCell id="dEJksU2F_B9rvnEaNN8X-3" value="そのゲームに投稿されているレビュー一覧" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" parent="dEJksU2F_B9rvnEaNN8X-2" vertex="1">
+        <mxCell id="dEJksU2F_B9rvnEaNN8X-3" value="新規投稿フォーム" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" parent="dEJksU2F_B9rvnEaNN8X-2" vertex="1">
           <mxGeometry y="26" width="275" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="dEJksU2F_B9rvnEaNN8X-4" value="レビューをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" parent="dEJksU2F_B9rvnEaNN8X-2" vertex="1">
+        <mxCell id="dEJksU2F_B9rvnEaNN8X-4" value="レビューを入力" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" parent="dEJksU2F_B9rvnEaNN8X-2" vertex="1">
           <mxGeometry y="51" width="275" height="25" as="geometry" />
         </mxCell>
-        <mxCell id="dEJksU2F_B9rvnEaNN8X-5" value="signupへのリンクをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" parent="dEJksU2F_B9rvnEaNN8X-2" vertex="1">
+        <mxCell id="dEJksU2F_B9rvnEaNN8X-5" value="投稿内容確認画面へボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" parent="dEJksU2F_B9rvnEaNN8X-2" vertex="1">
+          <mxGeometry y="76" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-1" value="ゲーム" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="280" y="560" width="400" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-2" value="ゲーム一覧" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="598" width="275" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-3" value="登録されているゲーム一覧" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-2">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-4" value="ゲームのタイトルをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-2">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-6" value="ゲーム詳細" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="342.5" y="720" width="275" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-7" value="ゲームの詳細説明" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-6">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-8" value="ジャンル名(検索用リンク)をクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-6">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-10" value="レビュー投稿者の名前をクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-6">
+          <mxGeometry y="76" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-9" value="レビュー投稿ボタン" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-6">
+          <mxGeometry y="101" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-22" value="レビューのタイトルをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-6">
+          <mxGeometry y="126" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HplJtwClx4txk9DZm8Su-4" target="HplJtwClx4txk9DZm8Su-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-15" value="投稿内容確認画面" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="822.5" y="900" width="275" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-16" value="投稿を下書きへ保存" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-15">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-17" value="投稿するボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-15">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="HplJtwClx4txk9DZm8Su-15" source="HplJtwClx4txk9DZm8Su-16" target="HplJtwClx4txk9DZm8Su-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dEJksU2F_B9rvnEaNN8X-5" target="HplJtwClx4txk9DZm8Su-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HplJtwClx4txk9DZm8Su-16" target="HplJtwClx4txk9DZm8Su-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-23" value="ログイン" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="822.5" y="598" width="275" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-24" value="ログイン情報入力" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-23">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-25" value="必要項目を入力し、ログインボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-23">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-26" value="signupへのリンクをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-23">
           <mxGeometry y="76" width="275" height="25" as="geometry" />
         </mxCell>
       </root>
