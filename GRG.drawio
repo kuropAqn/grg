@@ -171,8 +171,23 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="HplJtwClx4txk9DZm8Su-31" value="レビュー" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="HplJtwClx4txk9DZm8Su-31" value="会員" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="720" y="40" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-32" value="マイページ" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="763" y="80" width="275" height="126" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-33" value="登録されている会員情報" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-32">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-34" value="編集ボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-32">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-35" value="レビュー一覧ボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-32">
+          <mxGeometry y="76" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="HplJtwClx4txk9DZm8Su-38" value="" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="HplJtwClx4txk9DZm8Su-32">
+          <mxGeometry y="101" width="275" height="25" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
