@@ -4,6 +4,120 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ct63L04_EIadAF27uGYg-1" value="サイドバー" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="275" height="201" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-2" value="ロゴをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-1">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-3" value="sign inをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-1">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-4" value="ゲーム管理をクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-1">
+          <mxGeometry y="76" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-5" value="レビュー管理をクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-1">
+          <mxGeometry y="101" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-6" value="コメント管理をクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-1">
+          <mxGeometry y="126" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-7" value="ジャンル管理をクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-1">
+          <mxGeometry y="151" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-8" value="ユーザー管理をクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-1">
+          <mxGeometry y="176" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-9" value="レビュー" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="440" y="41" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-10" value="コメント" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="960" y="641" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-11" value="ユーザー" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="440" y="641" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-12" value="ゲーム" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="960" y="41" width="360" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-13" value="ユーザー詳細" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="482.5" y="840" width="275" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-14" value="ユーザー詳細情報表示" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-13">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-15" value="BANボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-13">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-17" value="ユーザー一覧" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="482.5" y="690" width="275" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-18" value="ユーザーの名前をクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-17">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-19" value="BANボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-17">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-22" value="ログイン" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="483" y="100" width="275" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-23" value="ログイン情報入力" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-22">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-24" value="必要項目を入力し、ログインボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-22">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-25" value="signupへのリンクをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-22">
+          <mxGeometry y="76" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-26" value="ログイン" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="484" y="250" width="275" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-27" value="ログイン情報入力" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-26">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-28" value="必要項目を入力し、ログインボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-26">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-29" value="signupへのリンクをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-26">
+          <mxGeometry y="76" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="ct63L04_EIadAF27uGYg-8" target="ct63L04_EIadAF27uGYg-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ct63L04_EIadAF27uGYg-18" target="ct63L04_EIadAF27uGYg-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="777" y="729" />
+              <mxPoint x="777" y="800" />
+              <mxPoint x="620" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-33" value="ゲーム一覧" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1003" y="100" width="275" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-34" value="登録したゲーム一覧" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-33">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-35" value="ゲームのタイトルをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-33">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-36" value="編集ボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-33">
+          <mxGeometry y="76" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-38" value="" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1003" y="250" width="275" height="101" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-39" value="ログイン情報入力" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-38">
+          <mxGeometry y="26" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-40" value="必要項目を入力し、ログインボタンをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-38">
+          <mxGeometry y="51" width="275" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="ct63L04_EIadAF27uGYg-41" value="signupへのリンクをクリック" style="text;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;whiteSpace=wrap;html=1;verticalAlign=middle;align=left;aspect=fixed;" vertex="1" parent="ct63L04_EIadAF27uGYg-38">
+          <mxGeometry y="76" width="275" height="25" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
