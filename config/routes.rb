@@ -1,27 +1,23 @@
 Rails.application.routes.draw do
 
-  namespace :public do
-    get 'homes/top'
-    get 'homes/about'
-  end
   namespace :admin do
     root to: 'homes#top'
     resources :genres, only: [:index, :create, :edit, :update]
-    resources :items, only: [:index, :create, :show, :edit, :update]
+    resources :games, only: [:index, :create, :show, :edit, :update]
+    resources :reviews, only: [:index, :show, :update, :edit, :create, :destroy]
   end
 
   scope module: :public do
     root 'homes#top'
     get 'homes/about' => 'homes#about', as: 'about'
+    devise_for :users, controllers: {
+      registrations: 'public/registrations',
+      sessions: 'public/sessions'
+    }
   end
 
-  devise_for :users, skip:[:passwords], controllers: {
-    registrations: "public/registrations",
-    sessions: "public/sessions"
-  }
-
-  devise_for :admin, skip:[:registrations, :passwords], controllers: {
-    sessions: "admin/sessions"
+  devise_for :admin, controllers: {
+    sessions: 'admin/sessions'
   }
 
 
