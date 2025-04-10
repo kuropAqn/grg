@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'homes/top'
+  end
+  namespace :admin do
     root to: 'homes#top'
     resources :genres, only: [:index, :create, :edit, :update]
     resources :games, only: [:index, :create, :show, :edit, :update]
