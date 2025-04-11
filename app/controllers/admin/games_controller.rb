@@ -7,7 +7,7 @@ class Admin::GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @game_reviews = @game.reviews
+    # @game_reviews = @game.reviews
     @game_review = Review.new
   end
 
@@ -17,7 +17,6 @@ class Admin::GamesController < ApplicationController
   end
 
   def new
-
   end
 
   def create
