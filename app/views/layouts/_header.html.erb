@@ -18,7 +18,7 @@
           </div>
           <div class="row  justify-content-end mr-2 collapse navbar-collapse justify-content-lg-end" id="navbarNavDropdown">
             <ul class="navbar-nav d-flex flex-lg-row flex-wrap">
-              <% if admin_signed_in? %>
+              <% if admin_admin_signed_in? %>
                 <li>
                   <%= link_to admin_games_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                     <i class="fa-solid fa-cake-candles"></i> ゲーム一覧
@@ -40,10 +40,10 @@
                   <% end %>
                 </li>
                 <li>
-                <%= link_to destroy_admin_admin_session_path, method: :delete, class: 'btn btn-outline-secondary mx-1 my-1' do %>
+                <%= button_to destroy_admin_admin_session_path, method: :delete, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                   <i class="fa-solid fa-right-from-bracket"></i> 管理者ログアウト
                 <% end %>
-                
+
                 </li>
               <% elsif user_signed_in? %>
                 <li>
@@ -57,7 +57,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to destroy_customer_session_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
+                  <%= button_to destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                     <i class="fa-solid fa-right-from-bracket"></i> 会員ログアウト
                   <% end %>
                 </li>
