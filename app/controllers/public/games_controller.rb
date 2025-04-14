@@ -8,7 +8,7 @@ class Public::GamesController < ApplicationController
     @game = Game.find(params[:id])
     @review = Review.new
     @reviews = @game.reviews.includes(:user)
-    @average_score = @game.reviews.average(:score).to_f
+    # @average_score = @game.reviews.average(:score).to_f
   end
 
 end

@@ -1,7 +1,7 @@
 <%= form_with model: game, url: game.persisted? ? admin_game_path : admin_games_path, method: game.persisted? ? :patch : :post do |f| %>
   <div>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.label :game_image %>
+    <%= f.file_field :game_image %>
   </div>
   <div>
     <%= f.label :image_cache %>
