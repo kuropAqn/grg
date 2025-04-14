@@ -3,7 +3,6 @@
     <tr>
       <th></th>
       <th>タイトル</th>
-      <th>概要</th>
       <th>価格</th>
       <th>ジャンル</th>
     </tr>
@@ -15,8 +14,9 @@
               <%= image_tag game.game_image, width: 200 %>
             <% end %>
         </td>
-        <td><%= link_to game.title, admin_game_path(game.id) %></td>
-        <td><%= game.body %></td>
+        <td>
+          <h3><%= link_to game.title, admin_game_path(game.id) %></h3>
+        </td>
         <td><%= game.price %></td>
         <td><%= game.genre.name if game.genre %></td>
       </tr>
