@@ -1,2 +1,33 @@
-<h1>Public::Games#show</h1>
-<p>Find me in app/views/public/games/show.html.erb</p>
+
+<h1><%= @game.title %>のレビュー</h1>
+
+<div>
+<%= render 'public/reviews/form', review: @review, game: @game, btntxt: @btntxt %>
+</div>
+
+<% @reviews.each do |review| %>
+  <div class="review">
+    <table>
+      <tr>
+        <td>
+          <h3><%= link_to review.title, game_review_path(@game, review) %></h3>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p><%= review.star %></p>
+        </td>
+        <td>
+          <p><%= review.body %></p>
+        </td>
+      </tr>
+
+    <tr>
+      <td><% if review.review_image.present? %>
+        <%= image_tag review.review_image, width: 200 %>
+      <% end %>
+      </td>
+    </tr>
+    </table>
+  </div>
+  <% end %>

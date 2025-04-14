@@ -8,6 +8,7 @@ class Public::GamesController < ApplicationController
     @game = Game.find(params[:id])
     @review = Review.new
     @reviews = @game.reviews.includes(:user)
+    @btntxt = "レビューを投稿する"
     # @average_score = @game.reviews.average(:score).to_f
   end
 

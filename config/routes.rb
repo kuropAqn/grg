@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     resources :genres, only: [:index, :create, :edit, :update]
     resources :games
-    resources :reviews, only: [:index, :show, :update, :edit, :create, :destroy]
+    resources :reviews
     resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
 
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     get 'users/mypage' => 'users#show'
 
     resources :games, only: [:index, :show] do
-      resources :reviews, only: [:index, :show, :edit, :create, :destroy]
+      resources :reviews
       resources :favorites, only: [:create, :destroy]
     end
   end
