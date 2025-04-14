@@ -4,8 +4,9 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+import Turbolinks from "turbolinks"
+
 import "channels"
 
 Rails.start()
@@ -14,3 +15,7 @@ ActiveStorage.start()
 
 import "bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css"
+
+import $ from 'jquery'
+window.$ = $
+window.jQuery = $

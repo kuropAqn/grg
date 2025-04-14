@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
     root to: 'homes#top'
     resources :genres, only: [:index, :create, :edit, :update]
-    resources :games, only: [:new, :index, :create, :show, :edit, :update]
+    resources :games
     resources :reviews, only: [:index, :show, :update, :edit, :create, :destroy]
     resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
