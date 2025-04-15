@@ -1,0 +1,9 @@
+<%= form_with model: genre, url: genre.persisted? ? admin_genre_path : admin_genres_path, method: genre.persisted? ? :patch : :post do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div>
+    <%= f.submit btntxt %>
+  </div>
+<% end %>

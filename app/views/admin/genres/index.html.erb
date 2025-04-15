@@ -1,0 +1,19 @@
+<%= render 'admin/genres/form', genre: @genre, btntxt: @btntxt %>
+
+<table>
+  <thread>
+    <tr>
+      <th>No.</th>
+      <th>ジャンル名</th>
+    </tr>
+  </thread>
+  <tbody>
+    <% @genres.each do |genre| %>
+      <tr>
+        <td><%= genre.id %></td>
+        <td><%= genre.name %></td>
+        <td><%= link_to '編集', edit_admin_genre_path(genre) %></td>
+        <td><%= link_to '削除', admin_genre_path(genre), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+      </tr>
+    <% end %>
+</table>
