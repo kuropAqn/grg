@@ -20,8 +20,13 @@ Rails.application.routes.draw do
 
     root 'homes#top'
     get 'homes/about' => 'homes#about', as: 'about'
-    get 'users/mypage' => 'users#show'
+    get 'users/mypage' => 'users#show', as: 'mypage'
+    get 'users/information/edit' => 'users#edit', as: 'information'
+    patch 'users/information' => 'users#update', as: 'information_update'
+    get  'users/unsubscribe' => 'users#unsubscribe', as:'unsubscribe' #確認画面へのパス
+    patch 'users/withdraw' => 'users#withdraw', as:'withdraw' #退会処理用のアクションパス
 
+    resources :users, only: [:edit, :update, :unsubscribe, :withdraw]
     resources :games, only: [:index, :show] do
       resources :reviews
       resources :favorites, only: [:create, :destroy]
