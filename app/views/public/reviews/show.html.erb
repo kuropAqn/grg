@@ -1,0 +1,18 @@
+<div><%= @review.title %></div>
+<div><%= @review.star %></div>
+<div><%= @review.body %></div>
+<%= image_tag @review.review_image, width: 200 %>
+
+<div>
+<%= link_to '編集', edit_game_review_path(@game, @review),
+            class: 'btn btn-primary' %>
+
+<%= button_to '削除', game_review_path(@game, @review),
+            method: :delete,
+            data: { confirm: 'Are you sure?' },
+            class: 'btn btn-danger' %>
+</div>
+
+<div>
+  <%= link_to 'ゲームへ戻る', game_path(@game), class: "btn btn-secondary" %>
+</div>
