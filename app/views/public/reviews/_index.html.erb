@@ -1,0 +1,38 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>投稿日時</th>
+      <th>パッケージ</th>
+      <th>タイトル</th>
+      <th>レビュータイトル</th>
+      <th>詳細へ</th>
+      <th>編集へ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% reviews.each do |r| %>
+      <tr>
+        <td>
+          <%= r.created_at.strftime("%B %d, %Y") %>
+        </td>
+        <td>
+          <%= link_to r.game do %>
+            <%= image_tag r.game.game_image, width: 100 %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to r.game.title, r.game %>
+        </td>
+        <td>
+          <%= r.title %>
+        </td>
+        <td>
+          <%= link_to "詳細", game_review_path(r.game_id, r.id), class: "btn btn-primary" %>
+        </td>
+        <td>
+          <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

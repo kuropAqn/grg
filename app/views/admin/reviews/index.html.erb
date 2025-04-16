@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>レビュー一覧</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Rating</th>
+            <th>Comment</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reviews.each do |review| %>
+            <tr>
+              <td><%= review.id %></td>
+              <td><%= review.user.name %></td>
+              <td><%= review.star %></td>
+              <td><%= review.body %></td>
+              <td>
+                <%= link_to '詳細', admin_review_path(review), class: 'btn btn-info' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>

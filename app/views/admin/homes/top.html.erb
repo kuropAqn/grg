@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">管理者トップページ</h1>
+
+      <% @games.each  do |game| %>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= game.title %></h5>
+            <p class="card-text">ジャンル: <%= game.genre.name %></p>
+            <%= link_to '詳細', game_path(game), class: 'btn btn-primary' %>
+          </div>
+        </div>
+      <% end %>
+      <div class="text-center">
+        <%= link_to '新規ゲーム登録へ', admin_games_path, class: 'btn btn-success' %>
+    </div>
+  </div>
