@@ -18,7 +18,7 @@ module.exports = function(api) {
   return {
     presets: [
       isTestEnv && [
-        '@babel/preset-env',
+        require.resolve('@babel/preset-env'),
         {
           targets: {
             node: 'current'
@@ -26,7 +26,7 @@ module.exports = function(api) {
         }
       ],
       (isProductionEnv || isDevelopmentEnv) && [
-        '@babel/preset-env',
+        require.resolve('@babel/preset-env'),
         {
           forceAllTransforms: true,
           useBuiltIns: 'entry',
@@ -37,16 +37,16 @@ module.exports = function(api) {
       ]
     ].filter(Boolean),
     plugins: [
-      require.resolve('babel-plugin-macros'), // ←★修正ポイント
-      '@babel/plugin-syntax-dynamic-import',
-      isTestEnv ? 'babel-plugin-dynamic-import-node' : null,
-      '@babel/plugin-transform-destructuring',
-      ['@babel/plugin-proposal-class-properties', { loose: true }],
-      ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
-      ['@babel/plugin-proposal-private-methods', { loose: true }],
-      ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
-      ['@babel/plugin-transform-runtime', { helpers: false }],
-      ['@babel/plugin-transform-regenerator', { async: false }]
+      require.resolve('babel-plugin-macros'),
+      require.resolve('@babel/plugin-syntax-dynamic-import'),
+      isTestEnv ? require.resolve('babel-plugin-dynamic-import-node') : null,
+      require.resolve('@babel/plugin-transform-destructuring'),
+      [require.resolve('@babel/plugin-proposal-class-properties'), { loose: true }],
+      [require.resolve('@babel/plugin-proposal-object-rest-spread'), { useBuiltIns: true }],
+      [require.resolve('@babel/plugin-proposal-private-methods'), { loose: true }],
+      [require.resolve('@babel/plugin-proposal-private-property-in-object'), { loose: true }],
+      [require.resolve('@babel/plugin-transform-runtime'), { helpers: false }],
+      [require.resolve('@babel/plugin-transform-regenerator'), { async: false }]
     ].filter(Boolean)
   }
 }
