@@ -7,8 +7,8 @@ module.exports = function(api) {
 
   if (!validEnv.includes(currentEnv)) {
     throw new Error(
-      'Please specify a valid `NODE_ENV` or ' +
-        '`BABEL_ENV` environment variables. Valid values are "development", ' +
+      'Please specify a valid NODE_ENV or ' +
+        'BABEL_ENV environment variables. Valid values are "development", ' +
         '"test", and "production". Instead, received: ' +
         JSON.stringify(currentEnv) +
         '.'
@@ -37,46 +37,16 @@ module.exports = function(api) {
       ]
     ].filter(Boolean),
     plugins: [
-      'babel-plugin-macros',
+      require.resolve('babel-plugin-macros'), // ←★修正ポイント
       '@babel/plugin-syntax-dynamic-import',
-      isTestEnv && 'babel-plugin-dynamic-import-node',
+      isTestEnv ? 'babel-plugin-dynamic-import-node' : null,
       '@babel/plugin-transform-destructuring',
-      [
-        '@babel/plugin-proposal-class-properties',
-        {
-          loose: true
-        }
-      ],
-      [
-        '@babel/plugin-proposal-object-rest-spread',
-        {
-          useBuiltIns: true
-        }
-      ],
-      [
-        '@babel/plugin-proposal-private-methods',
-        {
-          loose: true
-        }
-      ],
-      [
-        '@babel/plugin-proposal-private-property-in-object',
-        {
-          loose: true
-        }
-      ],
-      [
-        '@babel/plugin-transform-runtime',
-        {
-          helpers: false
-        }
-      ],
-      [
-        '@babel/plugin-transform-regenerator',
-        {
-          async: false
-        }
-      ]
+      ['@babel/plugin-proposal-class-properties', { loose: true }],
+      ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
+      ['@babel/plugin-proposal-private-methods', { loose: true }],
+      ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+      ['@babel/plugin-transform-runtime', { helpers: false }],
+      ['@babel/plugin-transform-regenerator', { async: false }]
     ].filter(Boolean)
   }
 }
