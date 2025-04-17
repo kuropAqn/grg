@@ -1,4 +1,4 @@
-# Geek Reccomended Games
+# Geek Recommended Games
 
 ## サイト概要
 ### サイトテーマ
