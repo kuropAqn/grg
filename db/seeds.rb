@@ -33,30 +33,6 @@ lucas = User.find_or_create_by!(email: "lucas@example.com") do |user|
   user.is_active = true
 end
 
-Game.find_or_create_by!(title: "サンプルゲーム1") do |game|
-  game.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game1.jpg"), filename:"sample-game1.jpg")
-  game.title = "サンプルゲーム1"
-  game.body = "サンプルのゲームです。"
-  game.price = 1000
-  game.genre_id = Genre.find_by(name: "アクション").id
-end
-
-Game.find_or_create_by!(title: "サンプルゲーム2") do |game|
-  game.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game2.jpg"), filename:"sample-game2.jpg")
-  game.title = "サンプルゲーム2"
-  game.body = "サンプルのゲームです。"
-  game.price = 2000
-  game.genre_id = Genre.find_by(name: "アドベンチャー").id
-end
-
-Game.find_or_create_by!(title: "サンプルゲーム3") do |game|
-  game.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
-  game.title = "サンプルゲーム3"
-  game.body = "サンプルのゲームです。"
-  game.price = 3000
-  game.genre_id = Genre.find_by(name: "RPG").id
-end
-
 Genre.find_or_create_by!(name: "アクション") do |genre|
   genre.name = "アクション"
 end
@@ -74,6 +50,30 @@ Genre.find_or_create_by!(name: "パズル") do |genre|
 end
 Genre.find_or_create_by!(name: "スポーツ") do |genre|
   genre.name = "スポーツ"
+end
+
+Game.find_or_create_by!(title: "サンプルゲーム1") do |game|
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game1.jpg"), filename:"sample-game1.jpg")
+  game.title = "サンプルゲーム1"
+  game.body = "サンプルのゲームです。"
+  game.price = 1000
+  game.genre_id = Genre.find_by(name: "アクション").id
+end
+
+Game.find_or_create_by!(title: "サンプルゲーム2") do |game|
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game2.jpg"), filename:"sample-game2.jpg")
+  game.title = "サンプルゲーム2"
+  game.body = "サンプルのゲームです。"
+  game.price = 2000
+  game.genre_id = Genre.find_by(name: "アドベンチャー").id
+end
+
+Game.find_or_create_by!(title: "サンプルゲーム3") do |game|
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.title = "サンプルゲーム3"
+  game.body = "サンプルのゲームです。"
+  game.price = 3000
+  game.genre_id = Genre.find_by(name: "RPG").id
 end
 
 Review.find_or_create_by!(user_id: lucas.id, game_id: Game.find_by(title: "サンプルゲーム1").id) do |review|
