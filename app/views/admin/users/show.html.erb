@@ -1,7 +1,7 @@
 
 <h3>ユーザー詳細ページ</h3>
 <div>
-  <table class="table table-bordered">
+  <table class="table table-bordered mt-3">
     <tr>
       <th>ID</th>
       <td><%= @user.id %></td>
@@ -27,10 +27,15 @@
       <td><%= @user.reviews.count %></td>
     </tr>
   </table>
+
+  <div class="btn-group" role="group">
+    <%= link_to '戻る', admin_users_path, class: 'btn btn-primary' %>
+    <%= link_to '編集', edit_admin_user_path(@user), class: 'btn btn-warning' %>
+  </div>
 </div>
 
-<h5>レビュー一覧</h5>
-<table class="table table-bordered">
+<h5 class="mt-5">レビュー一覧</h5>
+<table class="table table-bordered mt-3">
   <thead>
     <tr>
       <th>ゲームタイトル</th>
