@@ -17,9 +17,9 @@
   <tbody>
     <% @user.reviews.each do |review| %>
       <tr>
-        <td><%= review.game.title %></td>
-        <td><%= review.content %></td>
-        <td><%= review.rating %></td>
+        <td><%= review.title %></td>
+        <td><%= review.body %></td>
+        <td><%= review.star %></td>
         <td>
           <%= link_to '編集', edit_admin_review_path(review), class: 'btn btn-warning' %>
           <%= link_to '削除', admin_review_path(review), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
