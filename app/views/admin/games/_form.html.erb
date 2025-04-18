@@ -1,5 +1,5 @@
-<div class="w-50">
-<%= form_with model: game, url: game.persisted? ? admin_game_path(game) : admin_games_path, method: game.persisted? ? :patch : :post, local: true, html: { class: "needs-validation" } do |f| %>
+<div class="w-75">
+<%= form_with model: game, url: game.persisted? ? admin_game_path(game) : admin_games_path, method: game.persisted? ? :patch : :post, local: true do |f| %>
   <div class="m-3">
     <%= f.label :game_image, class: "form-label" %>
     <%= f.file_field :game_image, class: "form-control" %>

@@ -1,10 +1,15 @@
-<%= render 'admin/genres/form', genre: @genre, btntxt: @btntxt %>
+<div class="mr-5 my-3">
+  <%= render 'admin/genres/form', genre: @genre, btntxt: @btntxt %>
+</div>
 
-<table>
+<div class="m-3 w-75">
+<h3>ジャンル一覧</h3>
+<table class="table table-bordered">
   <thread>
     <tr>
       <th>No.</th>
       <th>ジャンル名</th>
+      <th>操作</th>
     </tr>
   </thread>
   <tbody>
@@ -12,8 +17,11 @@
       <tr>
         <td><%= genre.id %></td>
         <td><%= genre.name %></td>
-        <td><%= link_to '編集', edit_admin_genre_path(genre) %></td>
-        <td><%= link_to '削除', admin_genre_path(genre), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+        <td>
+          <%= link_to '編集', edit_admin_genre_path(genre), class:'btn btn-success'%>
+          <%= link_to '削除', admin_genre_path(genre), method: :delete, data: { confirm: '本当に削除しますか？' }, class:'btn btn-danger' %>
+        </td>
       </tr>
     <% end %>
+  </tbody>
 </table>
