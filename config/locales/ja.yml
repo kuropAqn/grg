@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    models:
+      review: レビュー
+      game: ゲーム
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        profile_image: プロフィール画像
+      session:
+        email: メールアドレス
+        password: パスワード
+      genre:
+        name: ジャンル名
+      review:
+        title: タイトル
+        body: 本文
+        star: 評価
+        review_image: レビュー画像
+      game:
+        title: タイトル
+        body: 説明
+        genre: ジャンル
+        platform: プラットフォーム
+        release_date: リリース日
+        game_image: ゲーム画像
+  helpers:
+    submit:
+      create: "%{model}を作成"
+      update: "%{model}を更新"
