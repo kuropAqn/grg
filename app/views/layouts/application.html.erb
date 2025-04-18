@@ -17,12 +17,26 @@
   <body class="d-flex flex-column vh-100">
 
     <%= render 'layouts/header' %>
-    <% flash.each do |message_type, message| %>
-      <div class="flash-message <%= message_type %>"><%= message %></div>
+
+    <% flash.each do |type, message| %>
+      <% bs_class = case type.to_sym
+        when :notice then 'alert-success'
+        when :alert then 'alert-danger'
+        else "alert-info"
+        end %>
+      <div class="alert <%= bs_class %> alert-dismissible fade show mx-3 my-2" role="alert">
+        <%= message %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     <% end %>
+
+
     <main class="mb-auto">
-    <%= yield %>
+      <div class="container container-fluid mt-3">
+        <%= yield %>
+      </div>
     </main>
+
     <%= render 'layouts/footer' %>
 
     <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload', defer: true %>

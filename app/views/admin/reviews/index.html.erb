@@ -1,14 +1,15 @@
-<div class="container">
+<div class="container container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <h2>レビュー一覧</h2>
+      <h3 class="my-3">レビュー一覧</h3>
       <table class="table table-striped">
         <thead>
           <tr>
             <th>ID</th>
-            <th>User</th>
-            <th>Rating</th>
-            <th>Comment</th>
+            <th>ユーザー名</th>
+            <th>タイトル</th>
+            <th>本文</th>
+            <th>評価</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -17,8 +18,9 @@
             <tr>
               <td><%= review.id %></td>
               <td><%= review.user.name %></td>
-              <td><%= review.star %></td>
+              <td><%= review.title %></td>
               <td><%= review.body %></td>
+              <td><%= review.star %></td>
               <td>
                 <%= link_to '詳細', admin_review_path(review), class: 'btn btn-info' %>
               </td>
