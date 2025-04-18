@@ -1,33 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
 
-<h1><%= @game.title %>のレビュー</h1>
+      <div>
+        <%= image_tag @game.game_image, width: 400 %>
+      </div>
 
-<div>
-<%= render 'public/reviews/form', review: @review, game: @game, btntxt: @btntxt %>
-</div>
+        <h2><%= @game.title %></h2>
+        <p><%= @game.body %></p>
 
-<% @reviews.each do |review| %>
-  <div class="review">
-    <table>
-      <tr>
-        <td>
-          <h3><%= link_to review.title, game_review_path(@game, review) %></h3>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p><%= review.star %></p>
-        </td>
-        <td>
-          <p><%= review.body %></p>
-        </td>
-      </tr>
 
-    <tr>
-      <td><% if review.review_image.present? %>
-        <%= image_tag review.review_image, width: 200 %>
-      <% end %>
-      </td>
-    </tr>
-    </table>
+      <div>
+        <h3><%= @game.title %>のレビュー</h3>
+        <%= render 'public/reviews/index', reviews: @reviews %>
+      </div>
+
+      <div>
+        <%= render 'public/reviews/form', review: @review, game: @game, btntxt: @btntxt %>
+      </div>
+
+
+
+      <div>
+        <%= link_to 'ゲーム一覧へ戻る', games_path, class: "btn btn-secondary" %>
+      </div>
+
+    </div>
   </div>
-  <% end %>
+</div>

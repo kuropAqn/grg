@@ -1,22 +1,22 @@
 <%= form_with model: review, url: review.persisted? ? game_review_path(game, review) : game_reviews_path(game), method: review.persisted? ? :patch : :post do |f| %>
 
-  <div class="form-group">
-    <%= f.label :star %>
-    <%= f.number_field :star, in: 1..5, class: 'form-control', autofocus: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :title %>
+  <div class="form-group w-50">
+    <%= f.label :title, "タイトル" %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :body %>
+  <div class="form-group w-50">
+    <%= f.label :body, "本文" %>
     <%= f.text_area :body, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :review_image %>
+  <div class="form-group w-50">
+  <%= f.label :star, "評価" %>
+  <%= f.number_field :star, in: 1..5, class: 'form-control', autofocus: true %>
+</div>
+
+  <div class="form-group w-50">
+    <%= f.label :review_image, "参考画像" %>
     <%= f.file_field :review_image, class: 'form-control' %>
   </div>
 

@@ -1,10 +1,13 @@
 <table class="table table-striped">
+
   <thead>
     <tr>
       <th>投稿日時</th>
-      <th>パッケージ</th>
       <th>タイトル</th>
-      <th>レビュータイトル</th>
+      <th>本文</th>
+      <th>添付画像</th>
+      <th>評価</th>
+      <th>いいね</th>
       <th>詳細へ</th>
       <th>編集へ</th>
     </tr>
@@ -16,21 +19,31 @@
           <%= r.created_at.strftime("%B %d, %Y") %>
         </td>
         <td>
-          <%= link_to r.game do %>
-            <%= image_tag r.game.game_image, width: 100 %>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to r.game.title, r.game %>
-        </td>
-        <td>
           <%= r.title %>
         </td>
+        <td>
+          <%= r.body %>
+        </td>
+
+        <td>
+          <% if r.review_image.present? %>
+            <%= link_to image_tag(r.review_image, width: 100), game_review_path(r.game_id, r.id) %>
+          <% else %>
+            <%= link_to "画像なし", game_review_path(r.game_id, r.id) %>
+          <% end %>
+        </td>
+
+        <td>
+          <%= r.star %>
+        </td>
+
+        <td><%= render "public/favorites/btn", review: r %></td>
+
         <td>
           <%= link_to "詳細", game_review_path(r.game_id, r.id), class: "btn btn-primary" %>
         </td>
         <td>
-          <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-primary" %>
+          <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-success" %>
         </td>
       </tr>
     <% end %>

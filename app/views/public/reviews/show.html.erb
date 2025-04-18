@@ -2,7 +2,7 @@
 <div><%= @review.star %></div>
 <div><%= @review.body %></div>
 <%= image_tag @review.review_image, width: 200 %>
-
+<td><%= render "favorites/btn", review: review %></td>
 <div>
 <%= link_to '編集', edit_game_review_path(@game, @review),
             class: 'btn btn-primary' %>
