@@ -8,9 +8,9 @@
             <th>ID</th>
             <th>ユーザー名</th>
             <th>タイトル</th>
-            <th>本文</th>
+            <th>ゲームタイトル</th>
             <th>評価</th>
-            <th>Actions</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody>
@@ -18,8 +18,8 @@
             <tr>
               <td><%= review.id %></td>
               <td><%= review.user.name %></td>
+              <td><%= review.game.title %></td>
               <td><%= review.title %></td>
-              <td><%= review.body %></td>
               <td><%= review.star %></td>
               <td>
                 <%= link_to '詳細', admin_review_path(review), class: 'btn btn-info' %>
