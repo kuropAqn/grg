@@ -1,5 +1,5 @@
 <div class="m-3">
-<table class="table table-striped">
+<table class="table table-border">
   <thead>
     <tr>
       <th></th>
@@ -11,12 +11,12 @@
   <tbody>
     <% @games.each do |game| %>
       <tr>
-        <td><%= link_to admin_game_path(game.id) do %>
+        <td><%= link_to game_path(game.id) do %>
               <%= image_tag game.game_image, width: 200 %>
             <% end %>
         </td>
         <td>
-          <h3><%= link_to game.title, admin_game_path(game.id) %></h3>
+          <h5><%= link_to game.title, game_path(game.id) %></h5>
         </td>
         <td><%= game.price %>円</td>
         <td><%= game.genre.name if game.genre %></td>

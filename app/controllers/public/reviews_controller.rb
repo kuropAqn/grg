@@ -1,4 +1,8 @@
 class Public::ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :show]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+
+
   def new
   end
 
@@ -49,6 +53,13 @@ class Public::ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to game_path(@game), notice: "レビューを削除しました"
+  end
+
+  def ensure_correct_user
+    @review = Review.find(params[:id])
+    unless @review.user_id == current_user.id
+      redirect_to game_path(@game), alert: "他のユーザーのレビューは編集できません"
+    end
   end
 
   private

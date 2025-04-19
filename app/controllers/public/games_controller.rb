@@ -1,4 +1,6 @@
 class Public::GamesController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :index]
+
   def index
     @games = Game.all
     @genres = Genre.all
