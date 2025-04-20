@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-responsive">
 
   <thead>
     <tr>
@@ -6,17 +6,17 @@
       <th>タイトル</th>
       <th>本文</th>
       <th>添付画像</th>
-      <th>評価</th>
-      <th>いいね</th>
-      <th>詳細へ</th>
-      <th>編集へ</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% reviews.each do |r| %>
       <tr>
         <td>
-          <%= r.created_at.strftime("%B %d, %Y") %>
+        <%= l(r.created_at, format: :short) %>
+
         </td>
         <td>
           <%= r.title %>
@@ -29,21 +29,19 @@
           <% if r.review_image.present? %>
             <%= link_to image_tag(r.review_image, width: 100), game_review_path(r.game_id, r.id) %>
           <% else %>
-            <%= link_to "画像なし", game_review_path(r.game_id, r.id) %>
+            <p>画像がありません</p>
           <% end %>
         </td>
 
-        <td>
+        <td style="white-space: nowrap;">
           <%= r.star %>
         </td>
 
-        <td><%= render "public/favorites/btn", review: r %></td>
+        <td style="white-space: nowrap;"><%= render "public/favorites/btn", review: r %></td>
 
         <td>
-          <%= link_to "詳細", game_review_path(r.game_id, r.id), class: "btn btn-primary" %>
-        </td>
-        <td>
-          <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-success" %>
+          <%= link_to "詳細", game_review_path(r.game_id, r.id), class: "btn btn-primary w-auto" %>
+          <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-success w-auto" %>
         </td>
       </tr>
     <% end %>

@@ -3,9 +3,6 @@ class Public::ReviewsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
 
-  def new
-  end
-
   def index
     @review = Review.new
     @game = Game.find(params[:game_id])
@@ -13,7 +10,7 @@ class Public::ReviewsController < ApplicationController
 
   def show
     @game = Game.find(params[:game_id])
-
+    @review = Review.find(params[:id])
     @user = current_user
     @reviews_from_user = Review.where(user_id: @user.id)
   end
@@ -21,7 +18,7 @@ class Public::ReviewsController < ApplicationController
   def edit
     @btntxt = "更新"
     @game = Game.find(params[:game_id])
-    @review = Review.find(params[:user_id])
+    @review = Review.find(params[:id])
     unless @review.user_id == current_user.id
       redirect_to game_reviews_path(@game), alert: "他のユーザーのレビューは編集できません"
     end

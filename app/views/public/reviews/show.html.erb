@@ -1,18 +1,60 @@
-<div><%= @review.title %></div>
-<div><%= @review.star %></div>
-<div><%= @review.body %></div>
-<%= image_tag @review.review_image, width: 200 %>
-<td><%= render "favorites/btn", review: review %></td>
-<div>
-<%= link_to '編集', edit_game_review_path(@game, @review),
-            class: 'btn btn-primary' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h5>レビュー詳細</h5>
 
-<%= button_to '削除', game_review_path(@game, @review),
-            method: :delete,
-            data: { confirm: 'Are you sure?' },
-            class: 'btn btn-danger' %>
-</div>
+        <table class="table mt-3">
+          <tbody>
+            <tr>
+              <th>投稿者</th>
+              <td><%= @review.user.name %></td>
+            </tr>
+            <tr>
+              <th>ゲーム名</th>
+              <td><%= @game.title %></td>
+            </tr>
+            <tr>
+              <th>タイトル</th>
+              <td><%= @review.title %></td>
+            </tr>
+            <tr>
+              <th>評価</th>
+              <td><%= @review.star %></td>
+            </tr>
+            <tr>
+              <th>いいね</th>
+              <td><%= render "public/favorites/btn", review: @review %></td>
+            <tr>
+              <th>レビュー内容</th>
+              <td><%= @review.body %></td>
+            </tr>
+            <tr>
+              <th>添付画像</th>
+              <td>
+                <% if @review.review_image.attached? %>
+                  <%= image_tag @review.review_image, width: 100 %>
+                <% else %>
+                  <p>画像はありません</p>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-<div>
-  <%= link_to 'ゲームへ戻る', game_path(@game), class: "btn btn-secondary" %>
+        <div>
+          <div class=" btn-group" , role="group">
+            <%= link_to '編集', edit_game_review_path(@game, @review), class: 'btn btn-primary' %>
+
+            <%= link_to '削除', game_review_path(@game, @review),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' },
+                                class: 'btn btn-danger' %>
+
+            <%= link_to 'ゲームへ戻る', game_path(@game), class: "btn btn-secondary" %>
+          </div>
+        </div>
+
+
+    </div>
+  </div>
 </div>
