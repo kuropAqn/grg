@@ -1,27 +1,35 @@
-<div class="m-3">
-<table class="table table-border">
-  <thead>
-    <tr>
-      <th></th>
-      <th>タイトル</th>
-      <th>価格</th>
-      <th>ジャンル</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= link_to game_path(game.id) do %>
-              <%= image_tag game.game_image, width: 200 %>
+<% @games.each do |game| %>
+<div class="col-md-12 mb-3">
+  <div class="card shadow-sm p-3">
+    <div class="row g-0">
+
+      <!-- 左側：画像 -->
+      <div class="col-md-5 d-flex align-items-center justify-content-center">
+        <% if game.game_image.attached? %>
+          <%= image_tag game.game_image, class: "img-fluid rounded", alt: game.title %>
+        <% else %>
+          <%= image_tag "no_image.png", class: "img-fluid rounded", alt: "No image" %>
+        <% end %>
+      </div>
+
+      <!-- 右側：情報 -->
+      <div class="col-md-7">
+        <div class="card-body">
+          <h5 class="card-title"><%= game.title %></h5>
+          <p class="card-text"><%= truncate(game.body, length: 80) %></p>
+          <p class="card-text"><strong>価格：</strong>￥<%= number_to_currency(game.price) %></p>
+            <% review_count = game.reviews.count %>
+            <% average_star = game.reviews.average(:star)&.round(1) %>
+          <p class="card-text">
+            <strong>レビュー：</strong>
+            <%= review_count %>件
+            <% if average_star.present? %>
+                  ★<%= average_star %> / 5
             <% end %>
-        </td>
-        <td>
-          <h5><%= link_to game.title, game_path(game.id) %></h5>
-        </td>
-        <td><%= game.price %>円</td>
-        <td><%= game.genre.name if game.genre %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<% end %>

@@ -1,22 +1,36 @@
 <div class="container container-fluid">
   <div class="row">
     <div class="col-12">
+      <div class="card", style="margin-top: 20px;
+                                width: 200;">
 
-      <div>
-        <%= image_tag @game.game_image, width: 400 %>
+        <!-- カードのヘッダー -->
+        <div class="card-header">
+          <h5 class="mb-0"><strong><%= @game.title %></strong></h5>
+        </div>
+
+        <!-- カードの中身 -->
+        <div class="card-body text-start">
+          <%= image_tag @game.game_image, width: 400 %>
+        </div>
+
+
+        <div class="card-body text-start">
+          <h6>ゲーム概要</h6>
+          <p><%= @game.body %></p>
+        </div>
       </div>
 
-        <h2><%= @game.title %></h2>
-        <p><%= @game.body %></p>
-
-
-      <div>
-        <h3><%= @game.title %>のレビュー</h3>
+      <div class="mt-5">
+        <div class="d-flex">
+          <h5><%= @game.title %>のレビュー</h5>
+          <div class="ml-3"><%= @game.reviews.count %>件</div>
+        </div>
         <%= render 'public/reviews/index', reviews: @reviews %>
       </div>
 
       <div>
-        <h3>投稿</h3>
+        <h5>投稿</h5>
         <%= render 'public/reviews/form', review: @review, game: @game, btntxt: @btntxt %>
       </div>
 

@@ -1,49 +1,47 @@
-<table class="table table-responsive">
-
-  <thead>
-    <tr>
-      <th>投稿日時</th>
-      <th>タイトル</th>
-      <th>本文</th>
-      <th>添付画像</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="container">
+  <div class="row">
     <% reviews.each do |r| %>
-      <tr>
-        <td>
-        <%= l(r.created_at, format: :short) %>
+      <div class="col-12 mb-3">
+        <div class="card shadow-sm">
+          <div class="card-body">
 
-        </td>
-        <td>
-          <%= r.title %>
-        </td>
-        <td>
-          <%= r.body %>
-        </td>
+            <!-- 1段目：タイトル -->
+            <div class="d-flex justify-content-between align-items-start">
+              <h5 class="card-title mb-2"><%= r.title %></h5>
 
-        <td>
-          <% if r.review_image.present? %>
-            <%= link_to image_tag(r.review_image, width: 100), game_review_path(r.game_id, r.id) %>
-          <% else %>
-            <p>画像がありません</p>
-          <% end %>
-        </td>
+            </div>
 
-        <td style="white-space: nowrap;">
-          <%= r.star %>
-        </td>
+            <!-- 2段目：本文 -->
+            <div class="d-flex justify-content-between align-items-start">
+              <p class="card-text mb-2"><%= r.body %></p>
+            </div>
 
-        <td style="white-space: nowrap;"><%= render "public/favorites/btn", review: r %></td>
+            <!-- 3段目：投稿者・いいね・投稿日時 -->
+            <div class="d-flex justify-content-end align-items-center text-muted small">
+              <div>
+                <%= render "public/favorites/btn", review: r %>
+              </div>
+              <div>
+                <%= link_to r.user.name, user_path(r.user_id), class: "text-muted mx-3 " %>
+              </div>
+              <div>
+                <%= l(r.created_at, format: :short) %>
+              </div>
+            </div>
 
-        <td>
-          <%= link_to "詳細", game_review_path(r.game_id, r.id), class: "btn btn-primary w-auto" %>
-          <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-success w-auto" %>
-        </td>
-      </tr>
+            <!-- 4段目：詳細・編集ボタン -->
+            <div class="d-flex justify-content-between">
+              <% if r.review_image.present? %>
+                <div><%= image_tag r.review_image, width:100, class:"img-thumbnail" %></div>
+              <% end %>
+              <div class="btn-group" role="group">
+                <%= link_to "詳細", game_review_path(r.game_id, r.id), class: "btn btn-sm btn-primary" %>
+                <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-sm btn-success" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>

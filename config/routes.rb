@@ -36,4 +36,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  # 検索機能のルーティング
+  get 'search' => 'searches#search'
+  get 'search/genre_search' => 'searches#genre_search', as: 'genre_search'
 end

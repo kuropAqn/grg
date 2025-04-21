@@ -3,7 +3,12 @@
     <div class="container-fluid">
       <div class="row justify-content-start">
         <a class="navbar-brand" href="/">
-          <%= link_to 'Geek Reccomended Games','/' %>
+          <%= link_to '/' do %>
+            <%= image_tag 'GRG_logo.png',
+                  width: 125,
+                  height: 50,
+                  class: "img-resize rounded" %>
+          <% end %>
         </a>
       </div>
 
