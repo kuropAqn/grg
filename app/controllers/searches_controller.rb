@@ -11,8 +11,9 @@ class SearchesController < ApplicationController
       @results = Game.search_by_title(@query, @match_type)
       @pub_results = Game.search_by_title(@query, @match_type)
     elsif @search_type == 'Genre'
-      @results = Genre.search_by_genre(@query, @match_type)
-      @pub_results = Genre.search_by_genre(@query, @match_type)
+      genres = Genre.search_by_genre(@query, @match_type)
+      @results = genres.map(&:games).flatten
+      @pub_results = @results
     else
       @results = []
     end

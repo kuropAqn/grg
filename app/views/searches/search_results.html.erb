@@ -2,11 +2,15 @@
   <div class="row">
     <% if @search_type == 'User' %>
       <h4 class="d-inline-block p-2 m-4", style="background-color: #e0e0e0; color: #333;">
-        "<%= @query %>" で ユーザーを検索
+        ユーザー名に"<%= @query %>"を含むユーザーを検索
       </h4>
-    <% else @search_type == 'Game' %>
-      <h4 class="d-inline-block p-2 m-4", style="background-color: #e0e0e0; color: #333;">
-        "<%= @query %>" で ゲームを検索
+    <% elsif @search_type == 'Game' %>
+      <h4 class="d-inline-block p-2 m-4" style="background-color: #e0e0e0; color: #333;">
+        タイトルに"<%= @query %>" を含むゲームを検索
+      </h4>
+    <% else %>
+      <h4 class="d-inline-block p-2 m-4" style="background-color: #e0e0e0; color: #333;">
+        ジャンルが "<%= @query %>"のゲームを検索
       </h4>
     <% end %>
   </div>
@@ -31,7 +35,7 @@
                     <%= result.id %>
                   </td>
                   <td>
-                    <%= link_to "#{result.family_name}#{result.first_name}", admin_customer_path(result), class: 'text-dark' %>
+                    <%= link_to "#{result.name}", admin_user_path(result), class: 'text-dark' %>
                   </td>
                   <td>
                     <%= result.email %>
@@ -42,6 +46,7 @@
                 </tr>
               <% end %>
             </tbody>
+
           <!-- ゲームについての検索結果 -->
           <% elsif @search_type == 'Game' %>
             <!-- 管理者ログイン時 -->
@@ -61,8 +66,8 @@
                       <%= result.id %>
                     </td>
                     <td class="align-middle">
-                      <%= link_to admin_item_path(result.id), class: 'text-dark' do %>
-                        <%= result.name %>
+                      <%= link_to admin_game_path(result.id), class: 'text-dark' do %>
+                        <%= result.title %>
                       <% end %>
                     </td>
                     <td class="align-middle">
@@ -80,6 +85,7 @@
                 <tr>
                   <th>タイトル</th>
                   <th>概要</th>
+                  <th>ジャンル</th>
                   <th style="white-space: nowrap;">税込価格</th>
                 </tr>
               </thead>
@@ -87,7 +93,64 @@
                 <% @pub_results.each do |result| %>
                   <tr>
                     <td style="white-space: nowrap;">
-                      <%= image_tag result.game_image, size: "40x40" %>
+                      <%= image_tag result.game_image, width:"75" %>
+                      <%= link_to result.title, game_path(result.id) %>
+                    </td>
+                    <td>
+                      <%= result.body %>
+                    </td>
+                    <td>
+                      <%= result.genre.name %>
+                    </td>
+                    <td>
+                      <%= result.price.to_s(:delimited) %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            <% end %>
+          <!-- ジャンルに紐づいたゲームの検索結果 -->
+          <% elsif  @search_type == 'Genre' %>
+            <!-- 管理者ログイン時 -->
+            <% if admin_signed_in? %>
+              <thead style="background-color: #f1f1f1; color: #333;">
+                <tr>
+                  <th>ゲームID</th>
+                  <th>タイトル</th>
+                  <th>税抜価格</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @results.games.each do |result| %>
+                  <tr>
+                    <td class="align-middle">
+                      <%= result.id %>
+                    </td>
+                    <td class="align-middle">
+                      <%= link_to admin_game_path(result.id), class: 'text-dark' do %>
+                        <%= result.title %>
+                      <% end %>
+                    </td>
+                    <td class="align-middle">
+                      <%= result.price.to_s(:delimited) %>
+                    </td>
+                  </tr>
+                  <% end %>
+              </tbody>
+            <!-- 会員ログインまたは未ログイン時 -->
+            <% else %>
+              <thead style="background-color: #f1f1f1; color: #333;">
+                <tr>
+                  <th>タイトル</th>
+                  <th>概要</th>
+                  <th>税込価格</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @results.each do |result| %>
+                  <tr>
+                    <td style="white-space: nowrap;">
+                      <%= image_tag result.game_image, width:"75" %>
                       <%= link_to result.title, game_path(result.id) %>
                     </td>
                     <td>

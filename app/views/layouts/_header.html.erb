@@ -19,15 +19,16 @@
         <!-- ナビゲーションメニュー -->
         <div class="collapse navbar-collapse justify-content-end mt-2" id="navbarNavDropdown">
           <ul class="navbar-nav d-flex align-items-end">
+
             <% if admin_signed_in? %>
               <li><%= link_to admin_games_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
-                <i class="fa-solid fa-cake-candles"></i> ゲーム一覧
+                <i class="fa-solid fa-gamepad"></i> ゲーム一覧
               <% end %></li>
               <li><%= link_to admin_users_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-users"></i> 会員一覧
               <% end %></li>
               <li><%= link_to admin_reviews_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
-                <i class="fa-solid fa-barcode"></i> レビュー一覧
+                <i class="fa-solid fa-list-check"></i> レビュー一覧
               <% end %></li>
               <li><%= link_to admin_genres_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-shapes"></i> ジャンル一覧
@@ -35,28 +36,31 @@
               <li><%= button_to destroy_admin_session_path, method: :delete, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-right-from-bracket"></i> 管理者ログアウト
               <% end %></li>
+
+
             <% elsif user_signed_in? %>
               <li><%= link_to mypage_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-user"></i> マイページ
               <% end %></li>
               <li><%= link_to games_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
-                <i class="fa-solid fa-cake-candles"></i> ゲーム一覧
+                <i class="fa-solid fa-gamepad"></i> ゲーム一覧
               <% end %></li>
               <li><%= button_to destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-right-from-bracket"></i> ログアウト
               <% end %></li>
+
             <% else %>
               <li><%= link_to about_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
-                <i class="fa-solid fa-house"></i> About
+                <i class="fa-solid fa-g"></i> About
               <% end %></li>
               <li><%= link_to games_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
-                <i class="fa-solid fa-cake-candles"></i> ゲーム一覧
+                <i class="fa-solid fa-gamepad"></i> ゲーム一覧
               <% end %></li>
               <li><%= link_to new_user_registration_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-user-plus"></i> 新規登録
               <% end %></li>
               <li><%= link_to new_user_session_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
-                <i class="fa-solid fa-right-to-bracket"></i> 会員ログイン
+                <i class="fa-solid fa-right-to-bracket"></i> ログイン
               <% end %></li>
             <% end %>
           </ul>
@@ -67,9 +71,9 @@
           <%= form_with url: search_path, method: :get, local: true, html: { class: 'd-flex', role: 'search' } do |f| %>
             <%= f.text_field :query, required: true, class: 'form-control me-2', placeholder: '検索ワード', style: 'width: auto;' %>
             <% if admin_signed_in? %>
-              <%= f.select :search_type, [['ユーザー', 'User'], ['ゲーム', 'Game']], {}, class: 'form-select me-2' %>
+              <%= f.select :search_type, [['ユーザー', 'User'], ['ゲーム', 'Game'], ['ジャンル', 'Genre']], {}, class: 'form-select me-2' %>
             <% else %>
-              <%= f.hidden_field :search_type, value: 'Game' %>
+              <%= f.select :search_type, [['ゲーム', 'Game'], ['ジャンル', 'Genre']], {}, class: 'form-select me-2' %>
             <% end %>
 
             <%= f.hidden_field :match_type, value: 'partial' %>
