@@ -12,6 +12,7 @@ Admin.find_or_create_by!(email: "admin@example.com") do |admin|
   admin.password_confirmation = ENV["ADMIN_PASS"]
 end
 
+#ユーザーの生成
 olivia = User.find_or_create_by!(email: "olivia@example.com") do |user|
   user.name = "Olivia"
   user.password = "password"
@@ -33,6 +34,7 @@ lucas = User.find_or_create_by!(email: "lucas@example.com") do |user|
   user.is_active = true
 end
 
+#ジャンルの生成
 Genre.find_or_create_by!(name: "アクション") do |genre|
   genre.name = "アクション"
 end
@@ -52,6 +54,7 @@ Genre.find_or_create_by!(name: "スポーツ") do |genre|
   genre.name = "スポーツ"
 end
 
+#ゲームの生成
 Game.find_or_create_by!(title: "サンプルゲーム1") do |game|
   game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game1.jpg"), filename:"sample-game1.jpg")
   game.title = "サンプルゲーム1"
@@ -76,6 +79,7 @@ Game.find_or_create_by!(title: "サンプルゲーム3") do |game|
   game.genre_id = Genre.find_by(name: "RPG").id
 end
 
+#レビューの生成
 Review.find_or_create_by!(user_id: lucas.id, game_id: Game.find_by(title: "サンプルゲーム1").id) do |review|
   review.title = "サンプルレビュー1"
   review.body = "サンプルのレビューです。"

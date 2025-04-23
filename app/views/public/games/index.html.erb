@@ -1,25 +1,11 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>タイトル</th>
-      <th>価格</th>
-      <th>ジャンル</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= link_to game_path(game.id) do %>
-              <%= image_tag game.game_image, width: 200 %>
-            <% end %>
-        </td>
-        <td>
-          <h3><%= link_to game.title, game_path(game.id) %></h3>
-        </td>
-        <td><%= game.price %></td>
-        <td><%= game.genre.name if game.genre %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12">
+
+    <h3 class="mt-5 mb-4 mx-3">ゲーム一覧</h3>
+    
+    <%= render 'public/games/index', game: @games %>
+
+    </div>
+  </div>
+</div>

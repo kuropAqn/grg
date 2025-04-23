@@ -2,11 +2,11 @@
   <div class="row justify-content-center">
     <div class="col-8">
       <h1><%= @game.title %></h1>
+      <div>
+        <%= image_tag @game.game_image, width: 500, class: "m-3" %>
+      </div>
 
-      <table>
-        <tr>
-          <td><%= image_tag @game.game_image, width: 400 %></td>
-        </tr>
+      <table class="table">
         <tr>
           <td>概要</td>
           <td><%= @game.body %></td>
@@ -19,14 +19,15 @@
           <td>ジャンル</td>
           <td><%= @game.genre.name %></td>
         </tr>
-        <tr>
-          <td><%= link_to '編集', edit_admin_game_path(@game.id), class: 'btn btn-primary' %></td>
-          <td><%= link_to '削除', admin_game_path(@game.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %></td>
-        </tr>
-        <tr>
-          <td><%= link_to '戻る', admin_games_path, class: 'btn btn-secondary' %></td>
-        </tr>
       </table>
+
+      <div class="d-flex justify-content-center mt-4">
+        <%= link_to '戻る', admin_games_path, class: 'btn btn-secondary me-2' %>
+        <%= link_to '編集', edit_admin_game_path(@game.id), class: 'btn btn-primary me-2' %>
+        <%= link_to '削除', admin_game_path(@game.id), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger me-2' %>
+      </div>
+
+
 
     </div>
   </div>
