@@ -1,6 +1,7 @@
 class Public::ReviewsController < ApplicationController
-  def new
-  end
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+
 
   def index
     @review = Review.new
@@ -8,8 +9,10 @@ class Public::ReviewsController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:game_id])
     @review = Review.find(params[:id])
+    @game = Game.find(@review.game_id)
+    @user = User.find(@review.user_id)
+    @reviews_from_user = Review.where(user_id: @user.id)
   end
 
   def edit
@@ -47,6 +50,13 @@ class Public::ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
     redirect_to game_path(@game), notice: "レビューを削除しました"
+  end
+
+  def ensure_correct_user
+    @review = Review.find(params[:id])
+    unless @review.user_id == current_user.id
+      redirect_to game_path(@review.game_id), alert: "他のユーザーのレビューは編集できません"
+    end
   end
 
   private

@@ -1,28 +1,48 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h2>レビュー詳細</h2>
-      <table class="table table-striped">
+    <div class="col-12">
+      <h2 class="mb-4">レビュー詳細</h2>
+
+      <table class="table">
         <tr>
           <th>ID</th>
           <td><%= @review.id %></td>
         </tr>
         <tr>
-          <th>User</th>
+          <th>ユーザー名</th>
           <td><%= @review.user.name %></td>
         </tr>
         <tr>
-          <th>Rating</th>
+          <th>ゲームタイトル</th>
+          <td><%= @review.game.title %></td>
+        </tr>
+        <tr>
+          <th>レビュータイトル</th>
+          <td><%= @review.title %></td>
+        </tr>
+        <tr>
+          <th>本文</th>
+          <td><%= @review.body %></td>
+        </tr>
+        <tr>
+          <th>評価</th>
           <td><%= @review.star %></td>
         </tr>
         <tr>
-          <th>Comment</th>
-          <td><%= @review.body %></td>
+          <th>投稿日時</th>
+          <td><%= l(@review.created_at, format: :short) %></td>
         </tr>
-      </table>
+        <tr>
+          <th>更新日時</th>
+          <td><%= l(@review.updated_at, format: :short) %></td>
+        </tr>
+        </table>
 
-      <%= button_to '削除', admin_review_path, method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
-      <%= link_to 'レビュー一覧へ', admin_reviews_path, class: 'btn btn-secondary' %>
+        <div class="btn-group" role="group">
+          <%= link_to '削除', admin_review_path(@review), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
+          <%= link_to 'レビュー一覧へ', admin_reviews_path, class: 'btn btn-secondary' %>
+        </div>
 
     </div>
   </div>
+</div>

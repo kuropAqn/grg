@@ -1,9 +1,15 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update]
+
+  def index
+    @user = User.find(params[:user_id])
+  end
 
   def show
     @user = current_user
     @games = Game.all
+    @reviews_from_user = @user.reviews
   end
 
   def edit
@@ -25,6 +31,10 @@ class Public::UsersController < ApplicationController
     reset_session
     flash[:notice] = "退会処理を実行いたしました"
     redirect_to root_path
+  end
+
+  def ensure_correct_user
+    redirect_to root_path, alert: "権限がありません" unless current_user
   end
 
   private

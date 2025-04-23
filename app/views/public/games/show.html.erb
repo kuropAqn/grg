@@ -1,33 +1,43 @@
+<div class="container container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card", style="margin-top: 20px;
+                                width: 200;">
 
-<h1><%= @game.title %>のレビュー</h1>
+        <!-- カードのヘッダー -->
+        <div class="card-header">
+          <h5 class="mb-0"><strong><%= @game.title %></strong></h5>
+        </div>
 
-<div>
-<%= render 'public/reviews/form', review: @review, game: @game, btntxt: @btntxt %>
-</div>
+        <!-- カードの中身 -->
+        <div class="card-body text-start">
+          <%= image_tag @game.game_image, width: 400 %>
+        </div>
 
-<% @reviews.each do |review| %>
-  <div class="review">
-    <table>
-      <tr>
-        <td>
-          <h3><%= link_to review.title, game_review_path(@game, review) %></h3>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p><%= review.star %></p>
-        </td>
-        <td>
-          <p><%= review.body %></p>
-        </td>
-      </tr>
 
-    <tr>
-      <td><% if review.review_image.present? %>
-        <%= image_tag review.review_image, width: 200 %>
-      <% end %>
-      </td>
-    </tr>
-    </table>
+        <div class="card-body text-start">
+          <h6>ゲーム概要</h6>
+          <p><%= @game.body %></p>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <div class="d-flex">
+          <h5><%= @game.title %>のレビュー</h5>
+          <div class="ml-3"><%= @game.reviews.count %>件</div>
+        </div>
+        <%= render 'public/reviews/index', reviews: @reviews %>
+      </div>
+
+      <div>
+        <h5>投稿</h5>
+        <% if user_signed_in? %>
+          <%= render 'public/reviews/form', review: @review, game: @game, btntxt: @btntxt %>
+        <% else %>
+          <p>レビューを投稿するには、<%= link_to 'ログイン', new_user_session_path %>してください。</p>
+        <% end %>
+      </div>
+
+    </div>
   </div>
-  <% end %>
+</div>

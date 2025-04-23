@@ -12,4 +12,15 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }, on: :create
 
+  scope :search_by_name, ->(query, match_type) {
+    case match_type
+    when 'partial' then where("CONCAT(name) LIKE ?", "%#{query}%")
+    else all
+    end
+  }
+
+  def already_favorited?(game)
+    self.favorites.exists?(game_id: game.id)
+  end
+
 end

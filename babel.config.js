@@ -43,8 +43,8 @@ module.exports = function(api) {
       require.resolve('@babel/plugin-transform-destructuring'),
       [require.resolve('@babel/plugin-proposal-class-properties'), { loose: true }],
       [require.resolve('@babel/plugin-proposal-object-rest-spread'), { useBuiltIns: true }],
-      [require.resolve('@babel/plugin-proposal-private-methods'), { loose: true }],
-      [require.resolve('@babel/plugin-proposal-private-property-in-object'), { loose: true }],
+      [require.resolve('@babel/plugin-transform-private-methods'), { loose: true }],
+      [require.resolve('@babel/plugin-transform-private-property-in-object'), { loose: true }],
       [require.resolve('@babel/plugin-transform-runtime'), { helpers: false }],
       [require.resolve('@babel/plugin-transform-regenerator'), { async: false }]
     ].filter(Boolean)

@@ -66,3 +66,9 @@ end
 gem "net-smtp"
 gem "net-pop"
 gem "net-imap"
+
+group :development, :test do
+  gem 'dotenv-rails'
+end
+
+gem 'rails-i18n'
