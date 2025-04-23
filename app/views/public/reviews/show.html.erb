@@ -41,19 +41,16 @@
           </tbody>
         </table>
 
+        <!-- 編集・削除ボタン -->
         <div>
           <div class=" btn-group" , role="group">
+            <% if user_signed_in? && current_user == @review.user %>
             <%= link_to '編集', edit_game_review_path(@game, @review), class: 'btn btn-primary' %>
-
-            <%= link_to '削除', game_review_path(@game, @review),
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' },
-                                class: 'btn btn-danger' %>
+            <% end %>
 
             <%= link_to 'ゲームへ戻る', game_path(@game), class: "btn btn-secondary" %>
           </div>
         </div>
-
 
     </div>
   </div>

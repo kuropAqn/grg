@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <h3 class="my-3">レビュー一覧</h3>
+      <p>合計<%= @reviews.count %>件</p>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -10,7 +11,7 @@
             <th>タイトル</th>
             <th>ゲームタイトル</th>
             <th>評価</th>
-            <th>操作</th>
+            <th>いいね数</th>
           </tr>
         </thead>
         <tbody>
@@ -20,10 +21,8 @@
               <td><%= review.user.name %></td>
               <td><%= review.game.title %></td>
               <td><%= review.title %></td>
-              <td><%= review.star %></td>
-              <td>
-                <%= link_to '詳細', admin_review_path(review), class: 'btn btn-info' %>
-              </td>
+              <td>★<%= review.star %></td>
+              <td><%= review.favorites.count %>件</td>
             </tr>
           <% end %>
         </tbody>

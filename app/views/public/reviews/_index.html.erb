@@ -7,7 +7,8 @@
 
             <!-- 1段目：タイトル -->
             <div class="d-flex justify-content-between align-items-start">
-              <h5 class="card-title mb-2"><%= r.title %></h5>
+              <h5 class="card-title mb-2">
+                <%= link_to r.title, game_review_path(r.game_id, r.id) %></h5>
             </div>
 
             <!-- 2段目：本文 -->
@@ -21,23 +22,28 @@
                 <%= render "public/favorites/btn", review: r %>
               </div>
               <div>
-                <%= link_to r.user.name, user_path(r.user_id), class: "text-muted mx-3 " %>
+                <%= link_to r.user.name, user_path(r.user_id), class: "text-muted mx-3" %>
               </div>
               <div>
                 <%= l(r.created_at, format: :short) %>
               </div>
             </div>
 
-            <!-- 4段目：詳細・編集ボタン -->
-            <div class="d-flex justify-content-between">
+            <!-- 4段目：画像・編集ボタン -->
+            <div class="d-flex">
               <% if r.review_image.present? %>
                 <div><%= image_tag r.review_image, width:100, class:"img-thumbnail" %></div>
               <% end %>
-              <div class="btn-group" role="group">
-                <%= link_to "詳細", game_review_path(r.game_id, r.id), class: "btn btn-sm btn-primary" %>
-                <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-sm btn-success" %>
-              </div>
             </div>
+
+            <div class="d-flex justify-content-end">
+              <% if user_signed_in? && current_user == r.user %>
+                <div class="btn-group" role="group">
+                  <%= link_to "編集", edit_game_review_path(r.game_id, r.id), class: "btn btn-sm btn-success" %>
+                </div>
+              <% end %>
+            </div>
+
           </div>
         </div>
       </div>

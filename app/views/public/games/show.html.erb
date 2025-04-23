@@ -31,13 +31,11 @@
 
       <div>
         <h5>投稿</h5>
-        <%= render 'public/reviews/form', review: @review, game: @game, btntxt: @btntxt %>
-      </div>
-
-
-
-      <div>
-        <%= link_to 'ゲーム一覧へ戻る', games_path, class: "btn btn-secondary" %>
+        <% if user_signed_in? %>
+          <%= render 'public/reviews/form', review: @review, game: @game, btntxt: @btntxt %>
+        <% else %>
+          <p>レビューを投稿するには、<%= link_to 'ログイン', new_user_session_path %>してください。</p>
+        <% end %>
       </div>
 
     </div>

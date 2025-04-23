@@ -1,5 +1,5 @@
 <div class="container container-fluid position-relative">
-  <div class="row align-items-center justify-content-center">
+  <div class="row align-items-center d-flex justify-content-center">
     <div class="col-12">
       <h5 class="d-inline-block py-2">ユーザーログイン</h5>
 
@@ -23,8 +23,9 @@
             </div>
           <% end %>
 
-          <div class="actions m-3">
+          <div class="actions m-3 d-flex justify-content-between">
             <%= f.submit "ログイン", class: "btn btn-primary" %>
+            <%= link_to "新規登録はこちら", new_user_registration_path, class: "btn btn-secondary" %>
           </div>
         <% end %>
 

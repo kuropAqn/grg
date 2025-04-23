@@ -1,5 +1,5 @@
 class Public::ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
 
@@ -9,9 +9,9 @@ class Public::ReviewsController < ApplicationController
   end
 
   def show
-    @game = Game.find(params[:game_id])
     @review = Review.find(params[:id])
-    @user = current_user
+    @game = Game.find(@review.game_id)
+    @user = User.find(@review.user_id)
     @reviews_from_user = Review.where(user_id: @user.id)
   end
 
@@ -55,7 +55,7 @@ class Public::ReviewsController < ApplicationController
   def ensure_correct_user
     @review = Review.find(params[:id])
     unless @review.user_id == current_user.id
-      redirect_to game_path(@game), alert: "他のユーザーのレビューは編集できません"
+      redirect_to game_path(@review.game_id), alert: "他のユーザーのレビューは編集できません"
     end
   end
 
