@@ -71,4 +71,7 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+
+gem 'rails-i18n'
+
 gem 'listen', '~> 3.3'

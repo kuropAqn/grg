@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :user
   belongs_to :game
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
 
   has_one_attached :review_image
 
@@ -11,4 +11,9 @@ class Review < ApplicationRecord
   validates :user_id, presence: true
   validates :star, presence: true
   
+  def favorited_by?(user)
+    return false if user.nil?
+    favorites.exists?(user_id: user.id)
+  end
+
 end

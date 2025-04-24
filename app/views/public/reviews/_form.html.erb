@@ -24,17 +24,30 @@
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group w-50">
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group w-50">
+  <%= f.label :star %>
+  <%= f.number_field :star, in: 1..5, class: 'form-control', autofocus: true %>
+</div>
+
+  <div class="form-group w-50">
     <%= f.label :review_image %>
     <%= f.file_field :review_image, class: 'form-control' %>
   </div>
-
-  <div class="form-group">
+    <div class="btn-group", role="group">
     <%= f.submit btntxt, class: 'btn btn-primary' %>
-  </div>
+
 <% end %>
+  <% if review.persisted? %>
+    <%= link_to '削除', game_review_path(@game, @review),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' },
+                        class: 'btn btn-danger' %>
+  <% end %>
+
+    <%= link_to 'ゲームへ戻る', game_path(@game), class: "btn btn-secondary" %>
+</div>

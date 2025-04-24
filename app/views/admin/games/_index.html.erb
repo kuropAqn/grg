@@ -1,3 +1,4 @@
+<div class="m-3">
 <table class="table table-striped">
   <thead>
     <tr>
@@ -17,9 +18,10 @@
         <td>
           <h3><%= link_to game.title, admin_game_path(game.id) %></h3>
         </td>
-        <td><%= game.price %></td>
+        <td><%= game.price %>円</td>
         <td><%= game.genre.name if game.genre %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>

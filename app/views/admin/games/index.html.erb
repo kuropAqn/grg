@@ -1,2 +1,11 @@
-<%= render 'admin/games/form', game: @game, btntxt: @btntxt %>
-<%= render 'admin/games/index', game: @games %>
+<div class="container container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12">
+
+    <h1 class="m-3">ゲーム一覧</h1>
+    <%= render 'admin/games/form', game: @game, btntxt: @btntxt %>
+    <%= render 'admin/games/index', game: @games %>
+
+    </div>
+  </div>
+</div>
