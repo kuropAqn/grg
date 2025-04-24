@@ -16,11 +16,12 @@
               <p class="card-text mb-2"><%= r.body %></p>
             </div>
 
-            <!-- 3段目：投稿者・いいね・投稿日時 -->
+            <!-- 3段目：いいね・評価・投稿者・投稿日時 -->
             <div class="d-flex justify-content-end align-items-center text-muted small">
               <div>
                 <%= render "public/favorites/btn", review: r %>
               </div>
+              
               <div>
                 <%= link_to r.user.name, user_path(r.user_id), class: "text-muted mx-3" %>
               </div>
