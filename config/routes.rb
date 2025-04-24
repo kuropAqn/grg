@@ -9,18 +9,17 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     resources :genres, only: [:index, :create, :edit, :update]
     resources :games
-    resources :reviews
+    resources :reviews, only: [:index, :show, :destroy]
     resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
 
-  #　ユーザー側のルーティング
+  # ユーザー側のルーティング
   scope module: :public do
     devise_for :users, controllers: {
       registrations: 'public/registrations',
       sessions: 'public/sessions'
     }
 
-    # 特殊なルーティング
     root 'homes#about'
     get 'homes/about' => 'homes#about', as: 'about'
     get 'users/mypage' => 'users#show', as: 'mypage'
@@ -30,9 +29,15 @@ Rails.application.routes.draw do
     patch 'users/withdraw' => 'users#withdraw', as:'withdraw'
 
     resources :users, only: [:edit, :update]
+
     resources :games, only: [:index, :show] do
-      resources :reviews
-      resources :favorites, only: [:create, :destroy]
+      resources :reviews do
+        resource :favorites, only: [:create, :destroy]
+      end
     end
   end
+
+  # 検索機能のルーティング
+  get 'search' => 'searches#search'
+  get 'search/genre_search' => 'searches#genre_search', as: 'genre_search'
 end

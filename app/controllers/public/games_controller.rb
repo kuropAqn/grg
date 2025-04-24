@@ -1,4 +1,6 @@
 class Public::GamesController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+
   def index
     @games = Game.all
     @genres = Genre.all
@@ -7,7 +9,7 @@ class Public::GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @review = Review.new
-    @reviews = @game.reviews.includes(:user)
+    @reviews = @game.reviews
     @btntxt = "レビューを投稿する"
     # @average_score = @game.reviews.average(:score).to_f
   end

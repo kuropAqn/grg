@@ -1,9 +1,12 @@
 <%= form_with model: genre, url: genre.persisted? ? admin_genre_path : admin_genres_path, method: genre.persisted? ? :patch : :post do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true %>
+  <div class="form-group mb-3 mx-3">
+    <%= f.label :name, class: "form-label" %>
+    <%= f.text_field :name, autofocus: true, class:'form-control w-50 ' %>
   </div>
   <div>
-    <%= f.submit btntxt %>
+    <%= f.submit btntxt, class: 'btn btn-primary ml-3' %>
+    <% if genre.persisted? %>
+      <%= link_to 'キャンセル', admin_genres_path, class: 'btn btn-danger ml-3' %>
+    <% end %>
   </div>
 <% end %>
