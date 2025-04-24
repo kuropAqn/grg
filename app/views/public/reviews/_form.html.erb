@@ -1,8 +1,22 @@
 <%= form_with model: review, url: review.persisted? ? game_review_path(game, review) : game_reviews_path(game), method: review.persisted? ? :patch : :post do |f| %>
 
-  <div class="form-group">
+  #☆5評価用
+  <div class="form-group position-static">
     <%= f.label :star %>
-    <%= f.number_field :star, in: 1..5, class: 'form-control', autofocus: true %>
+    <div id="post_raty"></div>
+    <% if review.id.nil? %>
+    <script>
+      var elem = document.querySelector('#post_raty');
+      var opt = {
+          starOn: "<% asset_path('star-on.png') %>",
+          starOff: "<% asset_path('star-off.png') %>",
+          starHalf: "<% asset_path('star-half.png') %>",
+          scoreName: 'review[star]' };
+      raty(elem,opt);
+    </script>
+    <% else %>
+      <%= render "public/reviews/_output_star", review: review %>
+    <% end %>
   </div>
 
   <div class="form-group">

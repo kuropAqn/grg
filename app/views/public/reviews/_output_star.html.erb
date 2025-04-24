@@ -1,0 +1,11 @@
+<div id="show_star-<%= review.id %>"></div>
+<script>
+  var elem = document.querySelector('#show_star-<%= review.id %>');
+  let opt = {
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    score: <%= review.star %>,
+    readOnly: true};
+  raty(elem, opt);
+</script>
