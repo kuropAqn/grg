@@ -40,4 +40,7 @@ Rails.application.routes.draw do
   # 検索機能のルーティング
   get 'search' => 'searches#search'
   get 'search/genre_search' => 'searches#genre_search', as: 'genre_search'
+
+  # グラフのルーティング
+  get 'graphs', to: 'graphs#index'
 end

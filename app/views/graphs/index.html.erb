@@ -1,0 +1,45 @@
+<h2>投稿といいね数の推移</h2>
+
+<select id="rangeSelector">
+  <option value="week" <%= "selected" if @range == "week" %>>1週間</option>
+  <option value="month" <%= "selected" if @range == "month" %>>1ヶ月</option>
+  <option value="year" <%= "selected" if @range == "year" %>>1年間</option>
+</select>
+
+<canvas id="myChart" width="600" height="300"></canvas>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const labels = <%= raw @labels.to_json %>;
+    const posts = <%= raw @posts_data.to_json %>;
+    const likes = <%= raw @likes_data.to_json %>;
+
+    let ctx = document.getElementById("statsChart");
+    let chart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: "投稿数",
+            data: posts,
+            borderColor: "blue",
+            backgroundColor: "rgba(0, 0, 255, 0.1)"
+          },
+          {
+            label: "いいね数",
+            data: likes,
+            borderColor: "red",
+            backgroundColor: "rgba(255, 0, 0, 0.1)"
+          }
+        ]
+      }
+    });
+
+    // セレクタで期間切り替え
+    document.getElementById("rangeSelector").addEventListener("change", (e) => {
+      const range = e.target.value;
+      window.location.href = `/stats?range=${range}`;
+    });
+  });
+</script>

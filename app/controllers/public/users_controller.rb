@@ -4,8 +4,7 @@ class Public::UsersController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @chart_labels = ["1月", "2月", "3月"]
-    @chart_data = [120, 150, 300]
+    
   end
 
   def show
