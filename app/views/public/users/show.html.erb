@@ -1,8 +1,11 @@
+<%= javascript_pack_tag 'chart', 'data-turbolinks-track': 'reload' %>
+<canvas id="myChart" width="400" height="200"></canvas>
+
 <div class="container container-fluid">
   <div class="row justify-content-center">
     <div class="col-md-10 col-lg-8">
 
-      <!-- レビュー -->
+      <!-- ユーザー情報 -->
       <div class="card shadow">
         <div class="card-header text-center bg-light">
           <h5 class="mb-0"><strong>ユーザー情報</strong></h5>
@@ -24,7 +27,7 @@
                 <td><%= @user.created_at.strftime("%B %d, %Y") %></td>
               </tr>
               <tr>
-
+              <canvas id="myChart" width="400" height="200"></canvas>
               </tr>
             </tbody>
           </table>
@@ -36,6 +39,7 @@
         </div>
       </div>
 
+      <!-- ユーザーが投稿したレビュー -->
       <div class="mt-4">
         <%= render 'public/reviews/index', reviews: @reviews %>
       </div>
