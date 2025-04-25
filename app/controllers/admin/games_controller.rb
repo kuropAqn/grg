@@ -9,6 +9,7 @@ class Admin::GamesController < ApplicationController
     @game = Game.find(params[:id])
     # @game_reviews = @game.reviews
     @game_review = Review.new
+    @game_reviews = Review.where(game_id: @game.id)
   end
 
   def edit

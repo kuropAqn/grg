@@ -9,7 +9,7 @@ class Public::UsersController < ApplicationController
   def show
     @user = current_user
     @games = Game.all
-    @reviews_from_user = @user.reviews
+    @reviews = @user.reviews
   end
 
   def edit
