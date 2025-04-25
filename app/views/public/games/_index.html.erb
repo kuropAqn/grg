@@ -19,15 +19,17 @@
             <%= link_to game.title, game_path(game) %></h5>
           <p class="card-text"><%= truncate(game.body, length: 80) %></p>
           <p class="card-text"><strong>価格：</strong>￥<%= number_to_currency(game.price) %></p>
+            
+          <p class="card-text">
             <% review_count = game.reviews.count %>
             <% average_star = game.reviews.average(:star)&.round(1) %>
-          <p class="card-text">
-            <strong>レビュー：</strong>
-            <%= review_count %>件
-            <% if average_star.present? %>
-                  ★<%= average_star %> / 5
-            <% end %>
+              <strong>レビュー：</strong>
+                <%= review_count %>件
+                <% if average_star.present? %>
+                  <%= render 'public/games/avg_star', score: average_star.to_f.round(1), dom_id: "game_avg_star_#{game.id}" %>
+                <% end %>
           </p>
+
         </div>
       </div>
     </div>

@@ -1,15 +1,15 @@
-<div id="show_star-<%= review.id %>"></div>
+<div id="<%= dom_id || 'average_star' %>"></div>
 
 <script>
   document.addEventListener("turbolinks:load", function () {
-    var elem = document.querySelector('#show_star-<%= review.id %>');
+    const elem = document.querySelector("#<%= dom_id || 'average_star' %>");
     if (elem) {
       elem.innerHTML = "";
       let opt = {
         starOn: "<%= asset_path('star-on.png') %>",
         starOff: "<%= asset_path('star-off.png') %>",
         starHalf: "<%= asset_path('star-half.png') %>",
-        score: <%= review.star %>,
+        score: <%= score || 0 %>,
         readOnly: true
       };
       raty(elem, opt);

@@ -5,21 +5,22 @@
     <div id="post_raty"></div>
     <% if review.id.nil? %>
       <script>
-        document.addEventListener("turbolinks:load", function() {
-          var elem = document.querySelector('#post_raty');
+        document.addEventListener("turbolinks:load", function () {
+          const elem = document.querySelector("#post_raty");
           if (elem) {
-            var opt = {
-              starOn: "<%= asset_path('star-on.png') %>",
-              starOff: "<%= asset_path('star-off.png') %>",
-              starHalf: "<%= asset_path('star-half.png') %>",
-              scoreName: 'review[star]',
+            elem.innerHTML = "";
+            const opt = {
+              starOn: "/assets/star-on.png",
+              starOff: "/assets/star-off.png",
+              starHalf: "/assets/star-half.png",
+              scoreName: "review[star]",
             };
             raty(elem, opt);
           }
         });
       </script>
     <% else %>
-      <%= render "output_star", review: review %>
+      <%= render "public/reviews/output_star", review: review %>
     <% end %>
       </div>
 
@@ -50,13 +51,3 @@
     <% end %>
   </div>
 <% end %>
-
-<div id="post_raty"></div>
-<script>
-  // scriptファイルをどのidの部分に配置するかを指定
-  let elem = document.querySelector('#post_raty');
-  let opt = {  
-    //星画像の指定などのオプションをここに記述,
-   };
-  raty(elem,opt);
-</script>
