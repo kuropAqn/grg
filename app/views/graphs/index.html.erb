@@ -1,19 +1,13 @@
 <h2>投稿といいね数の推移</h2>
 
-# <select id="rangeSelector">
-#   <option value="week" <%= "selected" if @range == "week" %>>1週間</option>
-#   <option value="month" <%= "selected" if @range == "month" %>>1ヶ月</option>
-#   <option value="year" <%= "selected" if @range == "year" %>>1年間</option>
-# </select>
-
-<canvas id="myChart" width="600" height="300"></canvas>
+<canvas id="myChart" width="300" height="150"></canvas>
 
 <script>
   var ctx = document.getElementById('myChart');
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange', 'gray'],
+      labels: ['6日前', '5日前', '4日前', '3日前', '2日前', '1日前', '今日'],
       datasets: [{
         label: '# of Votes',
         data: [ <%= @created_6day_ago %>,
