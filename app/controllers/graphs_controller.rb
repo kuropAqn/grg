@@ -5,7 +5,7 @@ class GraphsController < ApplicationController
     # グラフ用のデータを取得
     favorites = Favorite.where(review_id: current_user.reviews.pluck(:id))
     @created_today = favorites.created_today.count
-    @created_yesterdey = favorites.created_yesterday.count
+    @created_yesterday = favorites.created_yesterday.count
     @created_2day_ago = favorites.created_2day_ago.count
     @created_3day_ago = favorites.created_3day_ago.count
     @created_4day_ago = favorites.created_4day_ago.count
