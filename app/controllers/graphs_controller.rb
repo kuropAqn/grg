@@ -3,17 +3,14 @@ class GraphsController < ApplicationController
 
   def index
     # グラフ用のデータを取得
-    review = Review.where(params[:user_id])
-
-    @range = params[:range] || "week"
-
-    @created_today =
-    @created_yesterdey = Favorite.where(review_id: current_user.reviews.pluck(:id)).where(created_at: 1.day.ago.all_day).size
-    @created_2day_ago =
-    @created_3day_ago =
-    @created_4day_ago =
-    @created_5day_ago =
-    @created_6day_ago = 
+    @favorites = Favorite.where(review_id: current_user.reviews.pluck(:id))
+    @created_today = @favorites.created_today
+    @created_yesterdey = @favorites.created_yesterday
+    @created_2day_ago = @favorites.created_2day_ago
+    @created_3day_ago = @favorites.created_3day_ago
+    @created_4day_ago = @favorites.created_4day_ago
+    @created_5day_ago = @favorites.created_5day_ago
+    @created_6day_ago = @favorites.created_6day_ago
   end
   #   case @range
   #   when "month"
