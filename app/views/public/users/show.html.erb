@@ -20,8 +20,12 @@
                 <td><%= @user.email %></td>
               </tr>
               <tr>
-                <th scope="row" class="text-muted">登録日</th>
-                <td><%= @user.created_at.strftime("%B %d, %Y") %></td>
+                <th scope="row" class="text-muted">登録日時</th>
+                <td><%= l(@user.created_at, format: :long) %></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-muted">レビュー投稿数</th>
+                <td><%= @user.reviews.count %>件</td>
               </tr>
             </tbody>
           </table>
