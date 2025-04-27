@@ -38,6 +38,9 @@
               <% end %></li>
 
             <% elsif user_signed_in? %>
+              <li><%= link_to about_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
+                <i class="fa-solid fa-house"></i> ABOUT
+              <% end %></li>
               <li><%= link_to mypage_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-user"></i> マイページ
               <% end %></li>
@@ -49,6 +52,9 @@
               <% end %></li>
 
             <% else %>
+              <li><%= link_to about_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
+                <i class="fa-solid fa-house"></i> ABOUT
+              <% end %></li>
               <li><%= link_to games_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-gamepad"></i> ゲーム一覧
               <% end %></li>
