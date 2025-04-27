@@ -23,15 +23,13 @@
                 <th scope="row" class="text-muted">登録日</th>
                 <td><%= @user.created_at.strftime("%B %d, %Y") %></td>
               </tr>
-              <tr>
-                <td><%= link_to 'グラフ表示', graphs_path, class: "btn btn-primary" %></td>
-              </tr>
             </tbody>
           </table>
         </div>
 
         <!-- 編集ボタン -->
-        <div class="card-footer text-end bg-white">
+        <div class="card-footer d-flex justify-content-between bg-white">
+          <%= link_to 'グラフ表示', graphs_path, class: "btn btn-primary" %>
           <%= link_to "編集", information_path, class: "btn btn-success" %>
         </div>
       </div>
