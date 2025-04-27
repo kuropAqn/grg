@@ -4,7 +4,6 @@
 <!--このページだけ適用するために記述-->
   <head>
     <meta charset="UTF-8">
-      <title>Geek Recommended Games</title>
       <style>
         body {
           font-family: 'Helvetica Neue', sans-serif;
@@ -39,53 +38,104 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>Geek Recommended Games</h1>
+    <div class="container container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <h1 class="text-center mb-5">Geek Recommended Games</h1>
 
-      <!--以下READMEの内容-->
-      <div class="card">
-        <h2>サイト概要</h2>
+          <h4>最新ゲーム</h4>
 
-        <h3>サイトテーマ</h3>
-        <p>自分が好きそうなゲームをお勧めするレビューサイト</p>
+          <div class="mb-4">
+          <% @games.order(created_at: :desc).limit(3).each do |game| %>
+            <div class="col-md-12 mb-2">
+              <div class="card shadow-sm py-1 px-3 m-2">
+                <div class="row">
 
-        <h3>テーマを選んだ理由</h3>
-          <p>
-            有名タイトルでないインディーズゲームを探すときに、<br>
-            ①１から検索して<br>
-            ②ゲームの概要やレビューを見て<br>
-            ③面白そうか吟味する<br>
-            という手間を感じたため、もっと手軽に探せる仕組みがあれば<br>
-            時間を短縮し、より多くのゲームに触れられると考えました。
-          </p>
-          <p>
-            ブラウザの閲覧傾向などからユーザーの興味・趣向を把握し、<br>
-            レビューと照らし合わせて「あなたにはこのゲームがおすすめ！」と<br>
-            提案してくれるサイトを作ることが目的です。
-          </p>
+                  <!-- 画像 -->
+                  <div class="col-md-5 d-flex align-items-center justify-content-center">
+                    <% if game.game_image.attached? %>
+                      <%= image_tag game.game_image, class: "img-fluid rounded", alt: game.title %>
+                    <% else %>
+                      <%= image_tag "no_image.png", class: "img-fluid rounded", alt: "No image" %>
+                    <% end %>
+                  </div>
 
-          <h3>ターゲットユーザ</h3>
-          <ul>
-            <li>ゲームを探している人</li>
-            <li>タイトルの魅力を伝えたい人</li>
-            <li>ゲーマーのニーズを把握したい人</li>
-          </ul>
+                  <!-- 情報 -->
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <%= link_to game.title, game_path(game) %></h5>
+                      <p class="card-text"><%= truncate(game.body, length: 80) %></p>
+                      <p class="card-text"><strong>価格：</strong>￥<%= number_to_currency(game.price) %></p>
 
-          <h3>主な利用シーン</h3>
-          <ul>
-            <li>面白そうなゲームを探している時</li>
-            <li>ゲームの面白いポイントを簡単に把握したい時</li>
-            <li>ゲームクリエイターが作品の評価を確認したい時</li>
-          </ul>
-        </div>
+                      <p class="card-text">
+                        <% review_count = game.reviews.count %>
+                        <% average_star = game.reviews.average(:star)&.round(1) %>
+                          <strong>レビュー：</strong>
+                            <%= review_count %>件
+                            <% if average_star.present? %>
+                              <%= render 'public/games/avg_star', score: average_star.to_f.round(1), dom_id: "game_avg_star_#{game.id}" %>
+                            <% end %>
+                      </p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+
+          <!--以下READMEの内容-->
+          <div class="card">
+            <h2 class="card-header mb-2">サイト概要</h2>
+            <div class="card-body">
+
+
+              <div class="card-text">
+                <h3>サイトテーマ</h3>
+                <p>自分が好きそうなゲームをお勧めするレビューサイト</p>
+
+                <h3>テーマを選んだ理由</h3>
+                <p>
+                  有名タイトルでないインディーズゲームを探すときに、<br>
+                  ①１から検索して<br>
+                  ②ゲームの概要やレビューを見て<br>
+                  ③面白そうか吟味する<br>
+                  という手間を感じたため、もっと手軽に探せる仕組みがあれば<br>
+                  時間を短縮し、より多くのゲームに触れられると考えました。
+                </p>
+                <p>
+                  ブラウザの閲覧傾向などからユーザーの興味・趣向を把握し、<br>
+                  レビューと照らし合わせて「あなたにはこのゲームがおすすめ！」と<br>
+                  提案してくれるサイトを作ることが目的です。
+                </p>
+
+              <h3>ターゲットユーザ</h3>
+                <ul>
+                  <li>ゲームを探している人</li>
+                  <li>タイトルの魅力を伝えたい人</li>
+                  <li>ゲーマーのニーズを把握したい人</li>
+                </ul>
+
+                <h3>主な利用シーン</h3>
+                <ul>
+                  <li>面白そうなゲームを探している時</li>
+                  <li>ゲームの面白いポイントを簡単に把握したい時</li>
+                  <li>ゲームクリエイターが作品の評価を確認したい時</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
 
         <div class="card">
-          <h2>設計書</h2>
+          <h2 class="card-header mb-2">設計書</h2>
           <p>後ほど作成予定です。</p>
         </div>
 
         <div class="card">
-          <h2>開発環境</h2>
+        <h2 class="card-header mb-2">開発環境</h2>
           <ul>
             <li>OS：Linux(CentOS)</li>
             <li>言語：HTML, CSS, JavaScript, Ruby, SQL</li>
@@ -95,14 +145,15 @@
           </ul>
         </div>
 
-      <div class="card">
-        <h2>使用素材</h2>
-        <p>
-          著作権を考慮し、架空のデータを使用予定です。<br>
-          ゲームタイトルや説明文にはAI生成を利用し、<br>
-          「架空のゲーム」と指示文へ明記して生成しています。<br>
-          今後、実在データを使用する場合は著作権保持者との契約を行います。
-        </p>
+        <div class="card">
+        <h2 class="card-header mb-2">使用素材</h2>
+          <p>
+            著作権を考慮し、架空のデータを使用予定です。<br>
+            ゲームタイトルや説明文にはAI生成を利用し、<br>
+            「架空のゲーム」と指示文へ明記して生成しています。<br>
+            今後、実在データを使用する場合は著作権保持者との契約を行います。
+          </p>
+        </div>
       </div>
     </div>
   </body>

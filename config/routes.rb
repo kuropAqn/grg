@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # admin側のルーティング
   namespace :admin do
-    root to: 'homes#top'
+    root to: 'homes#about'
     resources :genres, only: [:index, :create, :edit, :update]
     resources :games
     resources :reviews, only: [:index, :show, :destroy]
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       sessions: 'public/sessions'
     }
 
-    root 'homes#about'
+    root to: 'homes#about'
     get 'homes/about' => 'homes#about', as: 'about'
     get 'users/mypage' => 'users#show', as: 'mypage'
     get 'users/information/edit' => 'users#edit', as: 'information'
