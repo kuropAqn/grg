@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
     <% reviews.each do |r| %>
       <div class="col-12 mb-3">
         <div class="card shadow-sm">
@@ -22,8 +22,6 @@
                 <div><%= image_tag r.review_image, width:100, class:"img-thumbnail" %></div>
               <% end %>
             </div>
-
-
 
             <!-- 3段目：評価・いいね・投稿者・投稿日時 -->
             <div class="d-flex justify-content-end align-items-center text-muted small mb-1">
