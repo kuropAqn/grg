@@ -10,10 +10,10 @@
             <!-- 1段目：評価・タイトル -->
             <div class="d-flex align-items-start">
               <h5 class="card-title mb-2">
-                <%= link_to r.title, admin_review_path(r.game_id, r.id) %>
+                <%= link_to r.title, admin_review_path(r) %>
               </h5>
               <p class="ml-3">
-                <%= link_to r.game.title, admin_game_path(r.game_id, r.id) %>
+                <%= link_to r.game.title, admin_game_path(r.game) %>
               </p>
             </div>
 
