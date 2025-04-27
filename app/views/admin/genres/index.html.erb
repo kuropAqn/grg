@@ -1,13 +1,13 @@
 <div class="container container-fluid">
-  <div class="row">
-    <div class="col-12">
+  <div class="row justify-content-center">
+    <div class="col-10">
 
       <div class="mr-5 my-3">
         <%= render 'admin/genres/form', genre: @genre, btntxt: @btntxt %>
       </div>
 
       <div class="m-3">
-        <h3>ジャンル一覧</h3>
+        <h4>ジャンル一覧</h4>
         <table class="table table-bordered">
           <thread>
             <tr>
@@ -22,8 +22,10 @@
                 <td><%= genre.id %></td>
                 <td><%= genre.name %></td>
                 <td>
-                  <%= link_to '編集', edit_admin_genre_path(genre), class:'btn btn-success'%>
-                  <%= link_to '削除', admin_genre_path(genre), method: :delete, data: { confirm: '本当に削除しますか？' }, class:'btn btn-danger' %>
+                  <div class="btn-group" role="group">
+                    <%= link_to '編集', edit_admin_genre_path(genre), class:'btn btn-success'%>
+                    <%= link_to '削除', admin_genre_path(genre), method: :delete, data: { confirm: '本当に削除しますか？' }, class:'btn btn-danger' %>
+                  </div>
                 </td>
               </tr>
             <% end %>
