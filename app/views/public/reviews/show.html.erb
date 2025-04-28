@@ -52,7 +52,11 @@
           </div>
         </div>
           <%= render 'public/comments/index', comments: @comments %>
-          <%= render 'public/comments/form', comment: @comment, review: @review, user: @user %>
+          <% if user_signed_in? %>
+            <%= render 'public/comments/form', comment: @comment, review: @review, user: @user %>
+          <% else %>
+            <p>コメントを投稿するには、<%= link_to 'ログイン', new_user_session_path %>してください。</p>
+          <% end %>
     </div>
   </div>
 </div>
