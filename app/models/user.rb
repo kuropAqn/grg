@@ -20,6 +20,10 @@ class User < ApplicationRecord
     end
   }
 
+  def active_for_authentication?
+    super && (is_active == true)
+  end
+
   def already_favorited?(game)
     self.favorites.exists?(game_id: game.id)
   end

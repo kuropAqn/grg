@@ -75,7 +75,7 @@
             <% if admin_signed_in? %>
               <%= f.select :search_type, [['ユーザー', 'User'], ['ゲーム', 'Game'], ['ジャンル', 'Genre']], {}, class: 'form-select me-2' %>
             <% else %>
-              <%= f.select :search_type, [['ゲーム', 'Game'], ['ジャンル', 'Genre']], {}, class: 'form-select me-2' %>
+              <%= f.select :search_type, [['ユーザー', 'User'], ['ゲーム', 'Game'], ['ジャンル', 'Genre']], {}, class: 'form-select me-2' %>
             <% end %>
 
             <%= f.hidden_field :match_type, value: 'partial' %>
