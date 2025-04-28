@@ -4,11 +4,15 @@ class Public::UsersController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    
   end
 
   def show
-    @user = current_user
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
+
     @games = Game.all
     @reviews = @user.reviews
   end
@@ -20,9 +24,9 @@ class Public::UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update(user_params)
-      redirect_to mypage_path, notice: '情報を更新しました。'
+      redirect_to mypage_path, notice: '情報を更新しました'
     else
-      render :edit
+      render :edit, alert:'入力内容を確認してください。'
     end
   end
 

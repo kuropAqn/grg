@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     get  'users/unsubscribe' => 'users#unsubscribe', as:'unsubscribe'
     patch 'users/withdraw' => 'users#withdraw', as:'withdraw'
 
-    resources :users, only: [:edit, :update]
+    resources :users, only: [:show, :edit, :update]
 
     resources :games, only: [:index, :show] do
       resources :reviews do

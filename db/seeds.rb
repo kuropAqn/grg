@@ -84,7 +84,7 @@ end
 Game.find_or_create_by!(title: "アクションゲーム2") do |game|
   game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/act2.png"), filename:"act2.png")
   game.title = "アクションゲーム2"
-  game.body = "サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。"
+  game.body = "サンプルのゲームです。"
   game.price = 2000
   game.genre_id = Genre.find_by(name: "アクション").id
 end
@@ -191,6 +191,49 @@ Game.find_or_create_by!(title: "スポーツゲーム2") do |game|
   game.body = "サンプルのゲームです。"
   game.price = 1000
   game.genre_id = Genre.find_by(name: "スポーツ").id
+end
+
+require 'faker'
+
+Faker::Config.locale = :ja
+
+review_images = ['review_sample.png']
+
+titles = [
+  '最高の体験でした', '想像以上に楽しめた', '期待を裏切らない', '少し難しかった', 'グラフィックが綺麗',
+  'ストーリーに感動', 'ハマってしまった', 'もう一度遊びたい', '家族で盛り上がった', '音楽も素晴らしい'
+]
+
+bodies = [
+  '操作性がとても良く、直感的に遊べました。初心者にもおすすめです。',
+  'グラフィックがとてもリアルで、まるで映画を見ているような感覚でした。',
+  'ストーリーがとても深く、エンディングで思わず涙してしまいました。',
+  'ステージの難易度が絶妙で、クリアした時の達成感がたまりません。',
+  '友達と一緒にプレイしましたが、対戦モードが最高に盛り上がりました。',
+  '音楽が場面ごとにぴったり合っていて、世界観に引き込まれました。',
+  '少しバグがありましたが、全体的にとても楽しめる作品でした。',
+  'ボリュームたっぷりで、長く遊べるのが嬉しいポイントです。',
+  'アップデートで新要素が追加され、さらに面白くなりました。',
+  '課金なしでも十分楽しめるバランスの良さが素晴らしいと思いました。'
+]
+
+40.times do
+  review = Review.new(
+    title: titles.sample,
+    body: bodies.sample,
+    star: rand(1..5),
+    user_id: rand(1..6),
+    game_id: rand(1..15)
+  )
+
+  if rand < 0.3
+    file_name = review_images.sample
+    review.review_image = ActiveStorage::Blob.create_and_upload!(
+      io: File.open("#{Rails.root}/db/fixtures/#{file_name}"),
+      filename: file_name
+    )
+  end
+  review.save!
 end
 
 puts "seedの実行が完了しました"
