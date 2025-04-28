@@ -15,11 +15,17 @@ Rails.application.routes.draw do
   end
 
   # ユーザー側のルーティング
+
+
   scope module: :public do
     devise_for :users, controllers: {
       registrations: 'public/registrations',
       sessions: 'public/sessions'
     }
+
+    devise_scope :user do
+      post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    end
 
     root to: 'homes#about'
     get 'homes/about' => 'homes#about', as: 'about'
@@ -28,6 +34,7 @@ Rails.application.routes.draw do
     patch 'users/information' => 'users#update', as: 'information_update'
     get  'users/unsubscribe' => 'users#unsubscribe', as:'unsubscribe'
     patch 'users/withdraw' => 'users#withdraw', as:'withdraw'
+    post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
     resources :users, only: [:show, :edit, :update]
 

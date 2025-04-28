@@ -52,6 +52,9 @@
               <% end %></li>
 
             <% else %>
+              <li><%= link_to homes_guest_sign_in_path, method: :post, class: 'btn btn-outline-secondary mx-1 my-1' do %>
+                <i class="fa-solid fa-user-plus"></i>ゲストログイン（閲覧用）
+              <% end %></li>
               <li><%= link_to about_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-house"></i> ABOUT
               <% end %></li>
