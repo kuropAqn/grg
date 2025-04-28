@@ -74,7 +74,7 @@ end
 
 #ゲームの生成
 Game.find_or_create_by!(title: "アクションゲーム1") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game1.jpg"), filename:"sample-game1.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/act1.png"), filename:"act1.png")
   game.title = "アクションゲーム1"
   game.body = "サンプルのゲームです。"
   game.price = 1000
@@ -82,7 +82,7 @@ Game.find_or_create_by!(title: "アクションゲーム1") do |game|
 end
 
 Game.find_or_create_by!(title: "アクションゲーム2") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game1.jpg"), filename:"sample-game1.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/act2.png"), filename:"act2.png")
   game.title = "アクションゲーム2"
   game.body = "サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。サンプルのゲームです。"
   game.price = 2000
@@ -90,7 +90,7 @@ Game.find_or_create_by!(title: "アクションゲーム2") do |game|
 end
 
 Game.find_or_create_by!(title: "アクションゲーム3") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game1.jpg"), filename:"sample-game1.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/act3.png"), filename:"act3.png")
   game.title = "アクションゲーム3"
   game.body = "サンプルのゲームです。"
   game.price = 3000
@@ -98,7 +98,7 @@ Game.find_or_create_by!(title: "アクションゲーム3") do |game|
 end
 
 Game.find_or_create_by!(title: "アドベンチャーゲーム1") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game2.jpg"), filename:"sample-game2.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/adv1.png"), filename:"adv1.png")
   game.title = "サンプルゲーム2"
   game.body = "サンプルのゲームです。"
   game.price = 4000
@@ -106,7 +106,7 @@ Game.find_or_create_by!(title: "アドベンチャーゲーム1") do |game|
 end
 
 Game.find_or_create_by!(title: "アドベンチャーゲーム2") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game2.jpg"), filename:"sample-game2.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/adv2.png"), filename:"adv2.png")
   game.title = "サンプルゲーム2"
   game.body = "サンプルのゲームです。"
   game.price = 5000
@@ -114,7 +114,7 @@ Game.find_or_create_by!(title: "アドベンチャーゲーム2") do |game|
 end
 
 Game.find_or_create_by!(title: "RPGゲーム1") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/rpg1.png"), filename:"rpg1.png")
   game.title = "RPGゲーム1"
   game.body = "サンプルのゲームです。"
   game.price = 6000
@@ -122,7 +122,7 @@ Game.find_or_create_by!(title: "RPGゲーム1") do |game|
 end
 
 Game.find_or_create_by!(title: "RPGゲーム2") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/rpg2.png"), filename:"rpg2.png")
   game.title = "RPGゲーム2"
   game.body = "サンプルのゲームです。"
   game.price = 7000
@@ -130,7 +130,7 @@ Game.find_or_create_by!(title: "RPGゲーム2") do |game|
 end
 
 Game.find_or_create_by!(title: "RPGゲーム3") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/rpg3.png"), filename:"rpg3.png")
   game.title = "RPGゲーム3"
   game.body = "サンプルのゲームです。"
   game.price = 8000
@@ -138,7 +138,7 @@ Game.find_or_create_by!(title: "RPGゲーム3") do |game|
 end
 
 Game.find_or_create_by!(title: "シューティングゲーム1") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/stg1.png"), filename:"stg1.png")
   game.title = "シューティングゲーム1"
   game.body = "サンプルのゲームです。"
   game.price = 9000
@@ -146,7 +146,7 @@ Game.find_or_create_by!(title: "シューティングゲーム1") do |game|
 end
 
 Game.find_or_create_by!(title: "シューティングゲーム2") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/stg2.png"), filename:"stg2.png")
   game.title = "シューティングゲーム2"
   game.body = "サンプルのゲームです。"
   game.price = 10000
@@ -154,7 +154,7 @@ Game.find_or_create_by!(title: "シューティングゲーム2") do |game|
 end
 
 Game.find_or_create_by!(title: "パズルゲーム1") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/pzl1.png"), filename:"pzl1.png")
   game.title = "パズルゲーム1"
   game.body = "サンプルのゲームです。"
   game.price = 1000
@@ -162,7 +162,7 @@ Game.find_or_create_by!(title: "パズルゲーム1") do |game|
 end
 
 Game.find_or_create_by!(title: "パズルゲーム2") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/pzl2.png"), filename:"pzl2.png")
   game.title = "パズルゲーム2"
   game.body = "サンプルのゲームです。"
   game.price = 1000
@@ -170,7 +170,7 @@ Game.find_or_create_by!(title: "パズルゲーム2") do |game|
 end
 
 Game.find_or_create_by!(title: "パズルゲーム3") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/pzl3.png"), filename:"pzl3.png")
   game.title = "パズルゲーム3"
   game.body = "サンプルのゲームです。"
   game.price = 1000
@@ -178,7 +178,7 @@ Game.find_or_create_by!(title: "パズルゲーム3") do |game|
 end
 
 Game.find_or_create_by!(title: "スポーツゲーム1") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/spt1.png"), filename:"spt1.png")
   game.title = "スポーツゲーム1"
   game.body = "サンプルのゲームです。"
   game.price = 1000
@@ -186,7 +186,7 @@ Game.find_or_create_by!(title: "スポーツゲーム1") do |game|
 end
 
 Game.find_or_create_by!(title: "スポーツゲーム2") do |game|
-  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-game3.jpg"), filename:"sample-game3.jpg")
+  game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/spt2.png"), filename:"spt2.png")
   game.title = "スポーツゲーム2"
   game.body = "サンプルのゲームです。"
   game.price = 1000
