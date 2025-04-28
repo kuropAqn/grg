@@ -32,7 +32,8 @@
 - ゲームクリエイターが自分の作品へどのような評価がされているか確認したいとき
 ​
 ## 設計書
-後ほど作成予定です。​
+googleドライブの機能実装リストへのURLを記載いたします。
+https://docs.google.com/spreadsheets/d/1e_t7VnNvFE0vxlEuf1v2Ypl1Kr74DdmhRNPPU6Ma6W0/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
