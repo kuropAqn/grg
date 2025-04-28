@@ -1,0 +1,18 @@
+<%= form_with model: comment, url: comment.persisted? ? review_comments_path(review, user) : review_comments_path(review), method: comment.persisted? ? :patch : :post do |f| %>
+    <div class="form-group w-50">
+      <%= f.label :comment_body %>
+      <%= f.text_area :comment_body, class: 'form-control' %>
+    </div>
+
+    <div class="btn-group" role="group">
+      <%= f.submit '投稿', class: 'btn btn-primary' %>
+
+      <% if comment.persisted? %>
+        <%= link_to '削除', review_comments_path(review, comment),
+                            method: :delete,
+                            data: { confirm: '本当に削除しますか？' },
+                            class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

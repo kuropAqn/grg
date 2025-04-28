@@ -9,6 +9,8 @@ class Public::ReviewsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @btntxt = '投稿'
     @review = Review.find(params[:id])
     @game = Game.find(@review.game_id)
     @user = User.find(@review.user_id)
