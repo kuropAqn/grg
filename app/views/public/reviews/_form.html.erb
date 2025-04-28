@@ -8,11 +8,11 @@
           if (elem) {
             elem.innerHTML = "";
             const opt = {
-              starOn: "/assets/star-on.png",
-              starOff: "/assets/star-off.png",
-              starHalf: "/assets/star-half.png",
+              starOn: "<%= asset_path('star-on.png') %>",
+              starOff: "<%= asset_path('star-off.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
               scoreName: "review[star]",
-            };
+              };
             raty(elem, opt);
           }
         });
