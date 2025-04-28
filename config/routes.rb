@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       sessions: 'public/sessions'
     }
 
-    root 'homes#about'
+    root to: 'homes#about'
     get 'homes/about' => 'homes#about', as: 'about'
     get 'users/mypage' => 'users#show', as: 'mypage'
     get 'users/information/edit' => 'users#edit', as: 'information'
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     get  'users/unsubscribe' => 'users#unsubscribe', as:'unsubscribe'
     patch 'users/withdraw' => 'users#withdraw', as:'withdraw'
 
-    resources :users, only: [:edit, :update]
+    resources :users, only: [:show, :edit, :update]
 
     resources :games, only: [:index, :show] do
       resources :reviews do
@@ -40,4 +40,7 @@ Rails.application.routes.draw do
   # 検索機能のルーティング
   get 'search' => 'searches#search'
   get 'search/genre_search' => 'searches#genre_search', as: 'genre_search'
+
+  # グラフのルーティング
+  get 'graphs', to: 'graphs#index'
 end

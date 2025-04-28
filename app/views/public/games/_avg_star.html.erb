@@ -1,0 +1,18 @@
+<div id="<%= dom_id || 'average_star' %>"></div>
+
+<script>
+  document.addEventListener("turbolinks:load", function () {
+    const elem = document.querySelector("#<%= dom_id || 'average_star' %>");
+    if (elem) {
+      elem.innerHTML = "";
+      let opt = {
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        starHalf: "<%= asset_path('star-half.png') %>",
+        score: <%= score || 0 %>,
+        readOnly: true
+      };
+      raty(elem, opt);
+    }
+  });
+</script>

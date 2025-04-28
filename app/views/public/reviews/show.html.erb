@@ -19,7 +19,7 @@
             </tr>
             <tr>
               <th>評価</th>
-              <td><%= @review.star %></td>
+              <td><%= render "public/reviews/output_star", review: @review %></td>
             </tr>
             <tr>
               <th>いいね</th>
@@ -45,7 +45,7 @@
         <div>
           <div class=" btn-group" , role="group">
             <% if user_signed_in? && current_user == @review.user %>
-            <%= link_to '編集', edit_game_review_path(@game, @review), class: 'btn btn-primary' %>
+            <%= link_to '編集', edit_game_review_path(@game, @review), class: 'btn btn-success' %>
             <% end %>
 
             <%= link_to 'ゲームへ戻る', game_path(@game), class: "btn btn-secondary" %>
