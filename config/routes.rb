@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # admin側のルーティング
   namespace :admin do
-    root to: 'homes#about'
+    root to: 'homes#top'
     resources :genres, only: [:index, :create, :edit, :update]
     resources :games
     resources :reviews, only: [:index, :show, :destroy]

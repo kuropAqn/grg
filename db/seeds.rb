@@ -7,7 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "seedの実行を開始"
 
-
+#管理者の生成。削除厳禁
+Admin.find_or_create_by!(email: "admin@example.com") do |admin|
+  admin.password = ENV["ADMIN_PASS"]
+  admin.password_confirmation = ENV["ADMIN_PASS"]
+end
 
 #ユーザーの生成
 olivia = User.find_or_create_by!(email: "olivia@example.com") do |user|
@@ -99,7 +103,7 @@ end
 
 Game.find_or_create_by!(title: "アドベンチャーゲーム1") do |game|
   game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/adv1.png"), filename:"adv1.png")
-  game.title = "サンプルゲーム2"
+  game.title = "アドベンチャーゲーム1"
   game.body = "サンプルのゲームです。"
   game.price = 4000
   game.genre_id = Genre.find_by(name: "アドベンチャー").id
@@ -107,7 +111,7 @@ end
 
 Game.find_or_create_by!(title: "アドベンチャーゲーム2") do |game|
   game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/adv2.png"), filename:"adv2.png")
-  game.title = "サンプルゲーム2"
+  game.title = "アドベンチャーゲーム2"
   game.body = "サンプルのゲームです。"
   game.price = 5000
   game.genre_id = Genre.find_by(name: "アドベンチャー").id
@@ -165,7 +169,7 @@ Game.find_or_create_by!(title: "パズルゲーム2") do |game|
   game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/pzl2.png"), filename:"pzl2.png")
   game.title = "パズルゲーム2"
   game.body = "サンプルのゲームです。"
-  game.price = 1000
+  game.price = 2000
   game.genre_id = Genre.find_by(name: "パズル").id
 end
 
@@ -173,7 +177,7 @@ Game.find_or_create_by!(title: "パズルゲーム3") do |game|
   game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/pzl3.png"), filename:"pzl3.png")
   game.title = "パズルゲーム3"
   game.body = "サンプルのゲームです。"
-  game.price = 1000
+  game.price = 3000
   game.genre_id = Genre.find_by(name: "パズル").id
 end
 
@@ -181,7 +185,7 @@ Game.find_or_create_by!(title: "スポーツゲーム1") do |game|
   game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/spt1.png"), filename:"spt1.png")
   game.title = "スポーツゲーム1"
   game.body = "サンプルのゲームです。"
-  game.price = 1000
+  game.price = 4000
   game.genre_id = Genre.find_by(name: "スポーツ").id
 end
 
@@ -189,7 +193,7 @@ Game.find_or_create_by!(title: "スポーツゲーム2") do |game|
   game.game_image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/spt2.png"), filename:"spt2.png")
   game.title = "スポーツゲーム2"
   game.body = "サンプルのゲームです。"
-  game.price = 1000
+  game.price = 5000
   game.genre_id = Genre.find_by(name: "スポーツ").id
 end
 

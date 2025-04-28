@@ -19,6 +19,10 @@
               <%= link_to game.title, admin_game_path(game) %></h5>
             <p class="card-text"><%= truncate(game.body, length: 80) %></p>
             <p class="card-text"><strong>価格：</strong>￥<%= number_to_currency(game.price) %></p>
+            <p class="card-text">
+              <strong>ジャンル：</strong>
+              <%= link_to game.genre.name, search_path(query: game.genre.name, search_type: 'Genre', match_type: 'exact') %>
+            </p>
 
             <p class="card-text">
               <% review_count = game.reviews.count %>
