@@ -1,9 +1,7 @@
 <%= form_with model: review, url: review.persisted? ? game_review_path(game, review) : game_reviews_path(game), method: review.persisted? ? :patch : :post do |f| %>
-
   <div class="form-group position-static">
     <p>評価</P>
     <div id="post_raty"></div>
-    <% if review.id.nil? %>
       <script>
         document.addEventListener("turbolinks:load", function () {
           const elem = document.querySelector("#post_raty");
@@ -19,35 +17,33 @@
           }
         });
       </script>
-    <% else %>
-      <%= render "public/reviews/output_star", review: review %>
-    <% end %>
-      </div>
+    </div>
 
-  <div class="form-group w-50">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
+    <div class="form-group w-50">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-  <div class="form-group w-50">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
-  </div>
+    <div class="form-group w-50">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: 'form-control' %>
+    </div>
 
-  <div class="form-group w-50 mb-3">
-    <%= f.label :review_image %>
-    <%= f.file_field :review_image, class: 'form-control' %>
-  </div>
+    <div class="form-group w-50 mb-3">
+      <%= f.label :review_image %>
+      <%= f.file_field :review_image, class: 'form-control' %>
+    </div>
 
-  <div class="btn-group" role="group">
-    <%= f.submit btntxt, class: 'btn btn-primary' %>
+    <div class="btn-group" role="group">
+      <%= f.submit btntxt, class: 'btn btn-primary' %>
 
-    <% if review.persisted? %>
-      <%= link_to '削除', game_review_path(@game, @review),
-                        method: :delete,
-                        data: { confirm: '本当に削除しますか？' },
-                        class: 'btn btn-danger' %>
-      <%= link_to 'キャンセル', game_path(@game), class: "btn btn-secondary" %>
-    <% end %>
+      <% if review.persisted? %>
+        <%= link_to '削除', game_review_path(@game, @review),
+                            method: :delete,
+                            data: { confirm: '本当に削除しますか？' },
+                            class: 'btn btn-danger' %>
+        <%= link_to 'キャンセル', game_path(@game), class: "btn btn-secondary" %>
+      <% end %>
+    </div>
   </div>
 <% end %>
