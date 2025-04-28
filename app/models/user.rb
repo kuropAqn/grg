@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true

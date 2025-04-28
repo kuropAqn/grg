@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :games
     resources :reviews, only: [:index, :show, :destroy]
-    resources :comments, only:[:index, :show, :edit, :destroy]
+    # resources :comments, only:[:index, :show, :edit, :destroy]
     resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
 
@@ -31,10 +31,13 @@ Rails.application.routes.draw do
 
     resources :users, only: [:show, :edit, :update]
 
+    resources :reviews, only: [] do
+      resource :comments
+    end
+
     resources :games, only: [:index, :show] do
       resources :reviews do
         resource :favorites, only: [:create, :destroy]
-        resource :comments
       end
     end
   end
