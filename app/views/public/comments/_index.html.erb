@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row justify-content-center">
+  <h5 class="my-4">コメント一覧</h5>
     <% comments.each do |c| %>
-      <div class="col-12 my-3">
-      <h5>コメント一覧</h5>
+      <div class="col-12 mb-3">
+
         <div class="card shadow-sm w-50">
           <div class="card-body">
 
@@ -13,8 +14,11 @@
 
             <!-- 2段目：削除ボタン -->
             <div class="d-flex justify-content-end">
+              <p class="card-text mr-2">投稿日時：<%= l(c.created_at, format: :short) %></p>
+            </div>
+            <div class="d-flex justify-content-end">
               <% if user_signed_in? && current_user == c.user %>
-                <%= link_to "削除", review_comments_path(c.review_id, c.id),
+                <%= link_to "削除", review_comment_path(c.review, c),
                                     method: :delete,
                                     data: { confirm: '本当に削除しますか？' },
                                     class: "btn btn-sm btn-danger" %>

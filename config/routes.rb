@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :edit, :update]
 
     resources :reviews, only: [] do
-      resource :comments
+      resources :comments
     end
 
     resources :games, only: [:index, :show] do
