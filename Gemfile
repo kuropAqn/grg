@@ -76,6 +76,4 @@ gem 'rails-i18n'
 
 gem 'listen', '~> 3.3'
 
-group :development, :test do
-  gem 'faker'
-end
+gem 'faker'
