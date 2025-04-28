@@ -261,7 +261,7 @@ ja:
       timeoutable: セッションの有効期限が切れました
       unconfirmed: メールアドレスの確認が必要です
       unauthenticated: ログインが必要です
-      inactive: 退会済みアカウントではログインできません
+      inactive: 退会済みです。再度ご登録をしてご利用ください。
     mailer:
       confirmation:
         confirmed: "メールアドレスの確認が完了しました"
