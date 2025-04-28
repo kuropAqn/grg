@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :games
     resources :reviews, only: [:index, :show, :destroy]
+    # resources :comments, only:[:index, :show, :edit, :destroy]
     resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
 
@@ -29,6 +30,10 @@ Rails.application.routes.draw do
     patch 'users/withdraw' => 'users#withdraw', as:'withdraw'
 
     resources :users, only: [:show, :edit, :update]
+
+    resources :reviews, only: [] do
+      resources :comments
+    end
 
     resources :games, only: [:index, :show] do
       resources :reviews do
