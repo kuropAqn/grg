@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon">
     <script src="https://kit.fontawesome.com/cad58204f4.js" crossorigin="anonymous"></script>
 
 
@@ -36,7 +36,6 @@
 
     <main class="mb-auto my-3 pb-5">
         <%= yield %>
-      </div>
     </main>
 
     <%= render 'layouts/footer' %>
