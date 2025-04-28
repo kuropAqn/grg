@@ -10,6 +10,7 @@ class Public::ReviewsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @comments = Comment.all
     @btntxt = '投稿'
     @review = Review.find(params[:id])
     @game = Game.find(@review.game_id)

@@ -51,7 +51,8 @@
             <%= link_to 'ゲームへ戻る', game_path(@game), class: "btn btn-secondary" %>
           </div>
         </div>
-        <%= render 'public/comments/form', comment: @comment, review: @review, user: @user %>
+          <%= render 'public/comments/index', comments: @comments %>
+          <%= render 'public/comments/form', comment: @comment, review: @review, user: @user %>
     </div>
   </div>
 </div>
