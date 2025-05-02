@@ -9,7 +9,10 @@ class Public::ReviewsController < ApplicationController
   end
 
   def show
+    @btntxt = '投稿'
     @review = Review.find(params[:id])
+    @comment = Comment.new
+    @comments = @review.comments.all
     @game = Game.find(@review.game_id)
     @user = User.find(@review.user_id)
     @reviews_from_user = Review.where(user_id: @user.id)
@@ -39,7 +42,7 @@ class Public::ReviewsController < ApplicationController
     @game = Game.find(params[:game_id])
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to game_reviews_path(@game), notice: "レビューを更新しました"
+      redirect_to game_path(@game), notice: "レビューを更新しました"
     else
       render :edit
     end

@@ -37,8 +37,10 @@
                 <i class="fa-solid fa-right-from-bracket"></i> 管理者ログアウト
               <% end %></li>
 
-
             <% elsif user_signed_in? %>
+              <li><%= link_to about_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
+                <i class="fa-solid fa-house"></i> ABOUT
+              <% end %></li>
               <li><%= link_to mypage_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-user"></i> マイページ
               <% end %></li>
@@ -50,8 +52,11 @@
               <% end %></li>
 
             <% else %>
+              <li><%= link_to homes_guest_sign_in_path, method: :post, class: 'btn btn-outline-secondary mx-1 my-1' do %>
+                <i class="fa-solid fa-user-plus"></i>ゲストログイン（閲覧用）
+              <% end %></li>
               <li><%= link_to about_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
-                <i class="fa-solid fa-g"></i> About
+                <i class="fa-solid fa-house"></i> ABOUT
               <% end %></li>
               <li><%= link_to games_path, class: 'btn btn-outline-secondary mx-1 my-1' do %>
                 <i class="fa-solid fa-gamepad"></i> ゲーム一覧
@@ -73,18 +78,15 @@
             <% if admin_signed_in? %>
               <%= f.select :search_type, [['ユーザー', 'User'], ['ゲーム', 'Game'], ['ジャンル', 'Genre']], {}, class: 'form-select me-2' %>
             <% else %>
-              <%= f.select :search_type, [['ゲーム', 'Game'], ['ジャンル', 'Genre']], {}, class: 'form-select me-2' %>
+              <%= f.select :search_type, [['ユーザー', 'User'], ['ゲーム', 'Game'], ['ジャンル', 'Genre']], {}, class: 'form-select me-2' %>
             <% end %>
 
             <%= f.hidden_field :match_type, value: 'partial' %>
             <%= f.submit "検索", class: 'btn btn-outline-light' %>
           <% end %>
+
         </div>
       </div>
-
     </div>
-
-    
-    
   </nav>
 </header>

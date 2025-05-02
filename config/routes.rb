@@ -10,25 +10,37 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :games
     resources :reviews, only: [:index, :show, :destroy]
+    # resources :comments, only:[:index, :show, :edit, :destroy]
     resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
 
   # ユーザー側のルーティング
+
+
   scope module: :public do
     devise_for :users, controllers: {
       registrations: 'public/registrations',
       sessions: 'public/sessions'
     }
 
-    root 'homes#about'
+    devise_scope :user do
+      post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+    end
+
+    root to: 'homes#about'
     get 'homes/about' => 'homes#about', as: 'about'
     get 'users/mypage' => 'users#show', as: 'mypage'
     get 'users/information/edit' => 'users#edit', as: 'information'
     patch 'users/information' => 'users#update', as: 'information_update'
     get  'users/unsubscribe' => 'users#unsubscribe', as:'unsubscribe'
     patch 'users/withdraw' => 'users#withdraw', as:'withdraw'
+    post '/homes/guest_sign_in', to: 'homes#guest_sign_in'
 
-    resources :users, only: [:edit, :update]
+    resources :users, only: [:show, :edit, :update]
+
+    resources :reviews, only: [] do
+      resources :comments
+    end
 
     resources :games, only: [:index, :show] do
       resources :reviews do
@@ -40,4 +52,7 @@ Rails.application.routes.draw do
   # 検索機能のルーティング
   get 'search' => 'searches#search'
   get 'search/genre_search' => 'searches#genre_search', as: 'genre_search'
+
+  # グラフのルーティング
+  get 'graphs', to: 'graphs#index'
 end

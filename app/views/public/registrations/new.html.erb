@@ -1,6 +1,7 @@
-新規登録</h5>
-
-      <div class="w-75">
+<div class="container-fluid position-relative">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <h5 class="d-inline-block py-2">新規登録</h5>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "public/shared/error_messages", resource: resource %>
@@ -18,7 +19,7 @@
           <div class="field m-3">
             <%= f.label :password, class: "form-label" %>
             <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <em>(<%= @minimum_password_length %> 文字以上)</em>
             <% end %>
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
           </div>

@@ -1,0 +1,18 @@
+<div id="show_star-<%= review.id %>"></div>
+
+<script>
+  document.addEventListener("turbolinks:load", function () {
+    var elem = document.querySelector('#show_star-<%= review.id %>');
+    if (elem) {
+      elem.innerHTML = "";
+      let opt = {
+        starOn: "<%= asset_path('star-on.png') %>",
+        starOff: "<%= asset_path('star-off.png') %>",
+        starHalf: "<%= asset_path('star-half.png') %>",
+        score: <%= review.star %>,
+        readOnly: true
+      };
+      raty(elem, opt);
+    }
+  });
+</script>

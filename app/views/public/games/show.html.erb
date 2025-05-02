@@ -24,6 +24,10 @@
       <div class="mt-5">
         <div class="d-flex">
           <h5><%= @game.title %>のレビュー</h5>
+          <div class="ml-3">
+            <!-- 評価 -->
+            <%= render 'public/games/avg_star', score: @review_avg.to_f.round(1), dom_id: "game_avg_star_#{@game.id}" %>
+          </div>
           <div class="ml-3"><%= @game.reviews.count %>件</div>
         </div>
         <%= render 'public/reviews/index', reviews: @reviews %>

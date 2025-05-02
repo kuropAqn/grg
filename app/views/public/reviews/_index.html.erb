@@ -1,26 +1,37 @@
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
     <% reviews.each do |r| %>
       <div class="col-12 mb-3">
         <div class="card shadow-sm">
           <div class="card-body">
 
-            <!-- 1段目：タイトル -->
-            <div class="d-flex justify-content-between align-items-start">
+            <!-- 1段目：評価・タイトル -->
+            <div class="d-flex align-items-start">
               <h5 class="card-title mb-2">
-                <%= link_to r.title, game_review_path(r.game_id, r.id) %></h5>
+                <%= link_to r.title, game_review_path(r.game_id, r.id) %>
+              </h5>
             </div>
 
-            <!-- 2段目：本文 -->
-            <div class="d-flex justify-content-between align-items-start">
+            <!-- 2段目：本文・画像 -->
+            <div class="d-flex align-items-start">
               <p class="card-text mb-2"><%= r.body %></p>
             </div>
 
-            <!-- 3段目：投稿者・いいね・投稿日時 -->
-            <div class="d-flex justify-content-end align-items-center text-muted small">
+            <div class="d-flex">
+              <% if r.review_image.present? %>
+                <div><%= image_tag r.review_image, width:100, class:"img-thumbnail" %></div>
+              <% end %>
+            </div>
+
+            <!-- 3段目：評価・いいね・投稿者・投稿日時 -->
+            <div class="d-flex justify-content-end align-items-center text-muted small mb-1">
+              <div class="mr-3">
+                <%= render "public/reviews/output_star", review: r %>
+              </div>
               <div>
                 <%= render "public/favorites/btn", review: r %>
               </div>
+
               <div>
                 <%= link_to r.user.name, user_path(r.user_id), class: "text-muted mx-3" %>
               </div>
@@ -29,13 +40,7 @@
               </div>
             </div>
 
-            <!-- 4段目：画像・編集ボタン -->
-            <div class="d-flex">
-              <% if r.review_image.present? %>
-                <div><%= image_tag r.review_image, width:100, class:"img-thumbnail" %></div>
-              <% end %>
-            </div>
-
+            <!-- 4段目：編集ボタン -->
             <div class="d-flex justify-content-end">
               <% if user_signed_in? && current_user == r.user %>
                 <div class="btn-group" role="group">

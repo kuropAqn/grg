@@ -1,7 +1,7 @@
 <div class="container container-fluid">
-  <div class="row">
-    <div class="col-12">
-      <h3>ユーザー一覧</h3>
+  <div class="row d-flex justify-content-center">
+    <div class="col-10">
+      <h3>会員一覧</h3>
 
       <table class="table table-bordered">
         <thead>
@@ -28,8 +28,8 @@
               </td>
               <td>
                 <div class="btn-group" role="group">
-                  <%= link_to '詳細', admin_user_path(user), class: 'btn btn-info' %>
-                  <%= link_to '編集', edit_admin_user_path(user), class: 'btn btn-warning' %>
+                  <%= link_to '詳細', admin_user_path(user), class: 'btn btn-primary' %>
+                  <%= link_to '編集', edit_admin_user_path(user), class: 'btn btn-success' %>
                   <%= link_to '削除', admin_user_path(user), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
                 </div>
               </td>
@@ -40,3 +40,4 @@
 
     </div>
   </div>
+</div>

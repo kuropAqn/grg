@@ -2,11 +2,12 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-         
+          :recoverable, :rememberable, :validatable
+
 
   has_many :reviews
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
   validates :email, presence: true, uniqueness: true
@@ -18,6 +19,16 @@ class User < ApplicationRecord
     else all
     end
   }
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
+  def active_for_authentication?
+    super && (is_active == true)
+  end
 
   def already_favorited?(game)
     self.favorites.exists?(game_id: game.id)

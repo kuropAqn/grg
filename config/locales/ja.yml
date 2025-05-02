@@ -72,6 +72,8 @@ ja:
         body: 説明
         genre: ジャンル
         game_image: ゲーム画像
+      comment:
+        comment_body: コメント
   helpers:
     submit:
       create: "%{model}を作成"
@@ -259,6 +261,7 @@ ja:
       timeoutable: セッションの有効期限が切れました
       unconfirmed: メールアドレスの確認が必要です
       unauthenticated: ログインが必要です
+      inactive: 退会済みです。再度ご登録をしてご利用ください。
     mailer:
       confirmation:
         confirmed: "メールアドレスの確認が完了しました"
@@ -268,6 +271,7 @@ ja:
         updated: "パスワードが変更されました"
     registrations:
       signed_up_but_inactive: "登録は完了しましたが、メールアドレスの確認が必要です"
+      signed_up: "新規登録が完了しました"
     sessions:
       signed_in: "ログインしました"
       signed_out: "ログアウトしました"
