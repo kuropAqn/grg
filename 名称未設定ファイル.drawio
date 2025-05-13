@@ -43,12 +43,12 @@
             <mxPoint x="327" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="pHButSu30lRlisLmX3lt-19" value="" style="endArrow=none;html=1;rounded=0;exitX=0.2;exitY=0.333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="pHButSu30lRlisLmX3lt-2" source="pHButSu30lRlisLmX3lt-25" target="pHButSu30lRlisLmX3lt-9">
+        <mxCell id="pHButSu30lRlisLmX3lt-19" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="pHButSu30lRlisLmX3lt-2" target="pHButSu30lRlisLmX3lt-9">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="280" y="240" as="sourcePoint" />
             <mxPoint x="330" y="190" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="240" y="59" />
+              <mxPoint x="280" y="59" />
             </Array>
           </mxGeometry>
         </mxCell>
