@@ -50,6 +50,7 @@ ja:
       user: ユーザー
       genre: ジャンル
       favorite: お気に入り
+      comment: コメント
     attributes:
       user:
         name: 名前
@@ -173,6 +174,7 @@ ja:
       model_invalid: 'バリデーションに失敗しました: %{errors}'
       not_a_number: は数値で入力してください
       not_an_integer: は整数で入力してください
+      not_saved: 保存できませんでした
       odd: は奇数にしてください
       other_than: は%{count}以外の値にしてください
       present: は入力しないでください
@@ -181,6 +183,9 @@ ja:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
+      blank: を入力してください
+      too_short: は%{count}文字以上で入力してください
+      too_long: は%{count}文字以内で入力してください
     template:
       body: 次の項目を確認してください
       header: "%{model}に%{count}個のエラーが発生しました"

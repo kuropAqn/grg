@@ -10,7 +10,8 @@ class Public::CommentsController < ApplicationController
     if @comment.save
       redirect_back fallback_location: games_path, notice: "コメントを投稿しました"
     else
-      redirect_back fallback_location: games_path, alert: "コメントの投稿に失敗しました"
+      flash[:alert] = @comment.errors.full_messages.join("、")
+      redirect_back fallback_location: games_path
     end
   end
 
