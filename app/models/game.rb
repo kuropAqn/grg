@@ -1,6 +1,8 @@
 class Game < ApplicationRecord
   belongs_to :genre
   has_many :reviews, dependent: :destroy
+  has_many :game_tags, dependent: :destroy
+  has_many :tags, through: :game_tags
 
   has_one_attached :game_image
 
