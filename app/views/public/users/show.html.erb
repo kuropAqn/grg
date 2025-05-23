@@ -32,7 +32,7 @@
         </div>
 
         <!-- 編集ボタン -->
-        <% if user_signed_in? && current_user == @user %>
+        <% if user_signed_in? && current_user == @user && current_user.email != 'guest@example.com'  %>
           <div class="card-footer d-flex justify-content-between bg-white">
             <%= link_to 'グラフ表示', graphs_path, class: "btn btn-primary" %>
             <%= link_to "編集", information_path, class: "btn btn-success" %>
