@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'tags/new'
+    get 'tags/create'
+  end
   # /admin/sign_in でアクセス可能にする
   devise_for :admin, path: 'admin', controllers: {
     sessions: 'admin/sessions'
@@ -12,6 +16,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :show, :destroy]
     # resources :comments, only:[:index, :show, :edit, :destroy]
     resources :users, only: [:index, :show, :edit, :update, :destroy]
+    resources :tags, only: [:new, :create]
   end
 
   # ユーザー側のルーティング
