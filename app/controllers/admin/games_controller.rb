@@ -17,12 +17,10 @@ class Admin::GamesController < ApplicationController
     @btntext = "更新"
   end
 
-  def new
-  end
-
   def create
     @game = Game.new(game_params)
     if @game.save
+      @game.tags = Tag.where(id: params[:game][:tag_ids])
       flash[:notice] = "新規登録が完了しました"
       redirect_to admin_game_path(@game.id)
     else
@@ -34,6 +32,7 @@ class Admin::GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     if @game.update(game_params)
+      @game.tags = Tag.where(id: params[:game][:tag_ids])
       flash[:notice] = "更新が完了しました"
       redirect_to admin_game_path(@game.id)
     else
@@ -57,7 +56,7 @@ class Admin::GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:title, :body, :price, :genre_id, :game_image)
+    params.require(:game).permit(:title, :body, :price, :genre_id, :game_image, tag_ids:[])
   end
 
 end

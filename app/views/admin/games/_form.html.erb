@@ -23,6 +23,14 @@
       <%= f.label :genre_id, class: "form-label" %>
       <%= f.select :genre_id, Genre.all.map { |g| [g.name, g.id] }, { include_blank: "--選択してください--" }, class: "form-select" %>
     </div>
+
+    <div class="m-3">
+      <%= label_tag 'タグ' %>
+      <%= select_tag 'game[tag_ids][]',
+            options_from_collection_for_select(Tag.all, :id, :name, @game.tag_ids),
+            multiple: true, class: "form-control" %>
+    </div>
+
     <div class="m-4">
       <%= f.submit btntxt, class: "btn btn-primary" %>
     </div>
